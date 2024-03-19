@@ -15,9 +15,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51lt4"]
-size = Vector2(18, 18)
+size = Vector2(0.124265, 0.081015)
 
 [node name="Player" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_c2gyx")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -27,6 +28,7 @@ sprite_frames = SubResource("SpriteFrames_8i04a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9, 9)
-scale = Vector2(-160.947, 246.868)
+rotation = -3.14159
+scale = Vector2(160.947, -246.868)
 shape = SubResource("RectangleShape2D_51lt4")
 debug_color = Color(0.00784314, 0.0117647, 0.00784314, 0.129412)

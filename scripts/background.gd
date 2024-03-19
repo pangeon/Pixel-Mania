@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	pass
+
 func _draw() -> void:
 	
 	# CANVAS AREA - true, -1.0 because is filled rect
@@ -14,3 +17,7 @@ func _draw() -> void:
 
 func _process(_delta) -> void:
 	queue_redraw()
+
+
+func _on_chest_push_by_player():
+	print("Player touch chest")

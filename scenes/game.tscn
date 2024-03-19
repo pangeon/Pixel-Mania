@@ -1,11 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbi45lpog5ros"]
+[gd_scene load_steps=7 format=3 uid="uid://dbi45lpog5ros"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_5kbue"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_n4xvt"]
 [ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="2_7b6k8"]
+[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="3_rqovp"]
+[ext_resource type="Texture2D" uid="uid://1237v51m04c2" path="res://arts/art_border_game_measure_opacity_70.png" id="3_uopgm"]
+[ext_resource type="Texture2D" uid="uid://ctsnpoc7ap85" path="res://arts/grid_color.png" id="4_wb8cq"]
 
 [node name="Game" type="Node"]
+script = ExtResource("1_n4xvt")
+metadata/_edit_vertical_guides_ = [51.0, 321.0, 327.0, 45.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
+metadata/_edit_horizontal_guides_ = [321.0, 51.0, 45.0, 327.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("1_5kbue")
 
 [node name="Player" parent="Background" instance=ExtResource("2_7b6k8")]
+position = Vector2(-18, -18)
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Chest" parent="Map" instance=ExtResource("3_rqovp")]
+position = Vector2(232, 250)
+
+[node name="Help" type="Node2D" parent="."]
+visible = false
+position = Vector2(-18, -18)
+
+[node name="HelpShape" type="Sprite2D" parent="Help"]
+texture_filter = 1
+position = Vector2(204, 204)
+texture = ExtResource("3_uopgm")
+
+[node name="GridColor" type="Sprite2D" parent="Help"]
+texture_filter = 1
+position = Vector2(204, 204)
+texture = ExtResource("4_wb8cq")
+
+[connection signal="push_by_player" from="Map/Chest" to="Background/Player" method="_on_chest_push_by_player"]
