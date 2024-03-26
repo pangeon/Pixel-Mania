@@ -37,4 +37,5 @@ texture_filter = 1
 position = Vector2(204, 204)
 texture = ExtResource("4_wb8cq")
 
-[connection signal="push_by_player" from="Map/Chest" to="Background/Player" method="_on_chest_push_by_player"]
+[connection signal="exited_by_player" from="Map/Chest" to="." method="_on_chest_exited_by_player"]
+[connection signal="push_by_player" from="Map/Chest" to="." method="_on_chest_push_by_player"]

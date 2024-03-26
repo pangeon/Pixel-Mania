@@ -21,7 +21,7 @@ const CANVAS_WIDTH: float = 372.0
 const CANVAS_PADDING: float = 42.0
 const LINE_WIDTH: float = 6.0
 const PLAYER_SIZE: float = 18.0
-const PLAYER_SPEED: float = 200
+const PLAYER_SPEED: float = 100
 
 const BG_COLOR: Color = Color(0x040C06FF)
 const BORDER_COLOR: Color = Color(0x305D42FF)
