@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbi45lpog5ros"]
+[gd_scene load_steps=9 format=3 uid="uid://dbi45lpog5ros"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_5kbue"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_n4xvt"]
 [ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="2_7b6k8"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="3_rqovp"]
-[ext_resource type="Texture2D" uid="uid://1237v51m04c2" path="res://arts/art_border_game_measure_opacity_70.png" id="3_uopgm"]
-[ext_resource type="Texture2D" uid="uid://ctsnpoc7ap85" path="res://arts/grid_color.png" id="4_wb8cq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kseiu"]
+size = Vector2(282, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flt1s"]
+size = Vector2(6, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilcjv"]
+size = Vector2(6, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqdyo"]
+size = Vector2(282, 6)
 
 [node name="Game" type="Node"]
 script = ExtResource("1_n4xvt")
@@ -15,27 +25,28 @@ metadata/_edit_horizontal_guides_ = [321.0, 51.0, 45.0, 327.0, 69.0, 87.0, 105.0
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("1_5kbue")
 
-[node name="Player" parent="Background" instance=ExtResource("2_7b6k8")]
+[node name="Player" parent="." instance=ExtResource("2_7b6k8")]
 position = Vector2(-18, -18)
 
-[node name="Map" type="Node2D" parent="."]
+[node name="Chest" parent="." instance=ExtResource("3_rqovp")]
+position = Vector2(141, 141)
 
-[node name="Chest" parent="Map" instance=ExtResource("3_rqovp")]
-position = Vector2(232, 250)
+[node name="GameBorders" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 
-[node name="Help" type="Node2D" parent="."]
-visible = false
-position = Vector2(-18, -18)
+[node name="Top" type="CollisionShape2D" parent="GameBorders"]
+position = Vector2(186, 48)
+shape = SubResource("RectangleShape2D_kseiu")
 
-[node name="HelpShape" type="Sprite2D" parent="Help"]
-texture_filter = 1
-position = Vector2(204, 204)
-texture = ExtResource("3_uopgm")
+[node name="Left" type="CollisionShape2D" parent="GameBorders"]
+position = Vector2(48, 186)
+shape = SubResource("RectangleShape2D_flt1s")
 
-[node name="GridColor" type="Sprite2D" parent="Help"]
-texture_filter = 1
-position = Vector2(204, 204)
-texture = ExtResource("4_wb8cq")
+[node name="Right" type="CollisionShape2D" parent="GameBorders"]
+position = Vector2(324, 186)
+shape = SubResource("RectangleShape2D_ilcjv")
 
-[connection signal="exited_by_player" from="Map/Chest" to="." method="_on_chest_exited_by_player"]
-[connection signal="push_by_player" from="Map/Chest" to="." method="_on_chest_push_by_player"]
+[node name="Bottom" type="CollisionShape2D" parent="GameBorders"]
+position = Vector2(186, 324)
+shape = SubResource("RectangleShape2D_pqdyo")

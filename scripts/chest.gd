@@ -1,20 +1,17 @@
-extends Area2D
+extends RigidBody2D
 
 class_name Chest
 
-signal push_by_player
-signal exited_by_player
+@export var max_speed: float = 0
+@export var gravity: float = 0
 
-func _ready():
-	pass
+func _ready() -> void:
+	set_gravity_scale(gravity)
+	set_contact_monitor(true)
+	set_lock_rotation_enabled(true)
 
-func _process(_delta):
-	pass
+func _physics_process(_delta) -> void:
+	var current_velocity: float = linear_velocity.length()
+	if current_velocity > max_speed:
+		linear_velocity = linear_velocity.normalized() * max_speed
 
-func _on_area_entered(area: Area2D) -> void:
-	if area is Player:
-		push_by_player.emit()
-
-func _on_area_exited(area):
-	if area is Player:
-		exited_by_player.emit()

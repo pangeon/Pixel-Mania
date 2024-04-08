@@ -18,6 +18,3 @@ func _draw() -> void:
 func _process(_delta) -> void:
 	queue_redraw()
 
-
-func _on_chest_push_by_player():
-	print("Player touch chest")
