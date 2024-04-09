@@ -1,9 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbi45lpog5ros"]
+[gd_scene load_steps=12 format=3 uid="uid://dbi45lpog5ros"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_5kbue"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_n4xvt"]
 [ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="2_7b6k8"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="3_rqovp"]
+[ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/tile_map_unit_18px.png" id="5_2l4eq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3imup"]
+texture = ExtResource("5_2l4eq")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+
+[sub_resource type="TileSet" id="TileSet_hktew"]
+tile_size = Vector2i(18, 18)
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_3imup")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kseiu"]
 size = Vector2(282, 6)
@@ -17,7 +52,7 @@ size = Vector2(6, 270)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqdyo"]
 size = Vector2(282, 6)
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_n4xvt")
 metadata/_edit_vertical_guides_ = [51.0, 321.0, 327.0, 45.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
 metadata/_edit_horizontal_guides_ = [321.0, 51.0, 45.0, 327.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
@@ -30,6 +65,13 @@ position = Vector2(-18, -18)
 
 [node name="Chest" parent="." instance=ExtResource("3_rqovp")]
 position = Vector2(141, 141)
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(51, 51)
+tile_set = SubResource("TileSet_hktew")
+format = 2
+layer_0/tile_data = PackedInt32Array(786433, 131072, 1, 786434, 131072, 1, 786435, 131072, 1, 786432, 0, 1, 786436, 65536, 1, 655364, 65536, 1, 655363, 131072, 1, 655362, 131072, 1, 655361, 0, 1, 786438, 0, 1, 786440, 65536, 1, 786439, 131072, 1, 655367, 65536, 0, 589831, 0, 0, 851979, 131072, 1, 851980, 131072, 1, 851981, 65536, 1, 851978, 0, 1)
 
 [node name="GameBorders" type="StaticBody2D" parent="."]
 collision_layer = 4
