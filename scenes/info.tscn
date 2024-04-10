@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs2npj5lu5xaa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6qrnu"]
+font_size = 18
+font_color = Color(0.933333, 1, 0.8, 1)
+
+[node name="Info" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -29.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PRESS \"R\" TO RESET GAME"
+label_settings = SubResource("LabelSettings_6qrnu")
+horizontal_alignment = 1
+vertical_alignment = 1

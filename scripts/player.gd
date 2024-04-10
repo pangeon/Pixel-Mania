@@ -18,6 +18,8 @@ func _physics_process(_delta) -> void:
 		velocity.y += speed
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= speed
+	if Input.is_action_pressed("reset"):
+		_reset()
 		
 	var collision: KinematicCollision2D = move_and_collide(velocity)
 	
@@ -30,5 +32,9 @@ func _physics_process(_delta) -> void:
 func print_player_position() -> void:
 	print("x=", int(position.x), " | y=", int(position.y))
 
-	
+func _on_laser_beam_player_touch():
+	print("player touch laser beam")
+	_reset()
 
+func _reset():
+	get_tree().reload_current_scene()
