@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var speed: float = 4
+@export var speed: float = 2
 @export var push_force: float = 15000
 
 func _ready() -> void:
