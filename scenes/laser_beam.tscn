@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o7jd"]
-size = Vector2(2, 36)
+size = Vector2(1, 36)
 
 [node name="LaserBeam" type="Area2D"]
 collision_layer = 16
@@ -43,6 +43,7 @@ autoplay = "on"
 frame_progress = 0.0983291
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_4o7jd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

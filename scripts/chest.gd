@@ -10,7 +10,7 @@ func _ready() -> void:
 	set_contact_monitor(true)
 	set_lock_rotation_enabled(true)
 
-func _physics_process(_delta) -> void:
+func _physics_process(_delta: float) -> void:
 	var current_velocity: float = linear_velocity.length()
 	if current_velocity > max_speed:
 		linear_velocity = linear_velocity.normalized() * max_speed

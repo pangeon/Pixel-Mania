@@ -8,7 +8,7 @@ class_name Player
 func _ready() -> void:
 	position = Globals.PLAYER_START # (51, 303)
 
-func _physics_process(_delta) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += speed
@@ -33,7 +33,6 @@ func print_player_position() -> void:
 	print("x=", int(position.x), " | y=", int(position.y))
 
 func _on_laser_beam_player_touch():
-	print("player touch laser beam")
 	_reset()
 
 func _reset():

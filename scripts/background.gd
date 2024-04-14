@@ -1,8 +1,5 @@
 extends Node2D
 
-func _ready():
-	pass
-
 func _draw() -> void:
 	
 	# CANVAS AREA - true, -1.0 because is filled rect
@@ -15,6 +12,6 @@ func _draw() -> void:
 		Rect2(Globals.GAME_AREA_X, Globals.GAME_AREA_X, Globals.PLAYER_AREA, Globals.PLAYER_AREA), 
 		Globals.BORDER_COLOR, false, Globals.LINE_WIDTH) #(48,48), (276,276)
 
-func _process(_delta) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
 

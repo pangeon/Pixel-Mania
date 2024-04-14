@@ -1,21 +1,20 @@
 extends Node
 
-func _ready():
-#	print("-- GLOBALS --")
-#	print("CANVAS_HEIGHT: ", CANVAS_HEIGHT)
-#	print("CANVAS_WIDTH: ", CANVAS_WIDTH)
-#	print("CANVAS_PADDING: ", CANVAS_PADDING)
-#	print("LINE_WIDTH: ", LINE_WIDTH)
-#	print("PLAYER_SIZE: ", PLAYER_SIZE)
-#	print("PLAYER_SPEED: ", PLAYER_SPEED)
-#	print("BG_COLOR: ", BG_COLOR)
-#	print("BORDER_COLOR: ", BORDER_COLOR)
-#	print("GAME_AREA_X: ", GAME_AREA_X)
-#	print("GAME_AREA_Y: ", GAME_AREA_Y)
-#	print("PLAYER_AREA: ", PLAYER_AREA)
-#	print("PLAYER_START: ", PLAYER_START)
-#	print("-------------")
-	pass
+func _ready() -> void:
+	print("-- GLOBALS --")
+	print("CANVAS_HEIGHT: ", CANVAS_HEIGHT)
+	print("CANVAS_WIDTH: ", CANVAS_WIDTH)
+	print("CANVAS_PADDING: ", CANVAS_PADDING)
+	print("LINE_WIDTH: ", LINE_WIDTH)
+	print("PLAYER_SIZE: ", PLAYER_SIZE)
+	print("PLAYER_SPEED: ", PLAYER_SPEED)
+	print("BG_COLOR: ", BG_COLOR)
+	print("BORDER_COLOR: ", BORDER_COLOR)
+	print("GAME_AREA_X: ", GAME_AREA_X)
+	print("GAME_AREA_Y: ", GAME_AREA_Y)
+	print("PLAYER_AREA: ", PLAYER_AREA)
+	print("PLAYER_START: ", PLAYER_START)
+	print("-------------")
 
 const CANVAS_HEIGHT: float = 372.0
 const CANVAS_WIDTH: float = 372.0
