@@ -1,17 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbi45lpog5ros"]
+[gd_scene load_steps=15 format=3 uid="uid://bixnsfbw5h3tg"]
 
-[ext_resource type="Script" path="res://scripts/background.gd" id="1_5kbue"]
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_n4xvt"]
-[ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="2_7b6k8"]
-[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="3_rqovp"]
-[ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/tile_map_unit_18px.png" id="5_2l4eq"]
-[ext_resource type="PackedScene" uid="uid://c0osq77bxj2bw" path="res://scenes/laser_beam.tscn" id="6_0f2ra"]
-[ext_resource type="PackedScene" uid="uid://cs2npj5lu5xaa" path="res://scenes/info.tscn" id="7_xcppg"]
-[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/activation_plate.tscn" id="8_fyf2p"]
-[ext_resource type="Texture2D" uid="uid://daq6owk52lw5c" path="res://assets/laser-beam-2x-off.png" id="9_7e4h6"]
+[ext_resource type="Script" path="res://scripts/start_level.gd" id="1_wejfc"]
+[ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/ui.tscn" id="2_ewd5e"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="3_lmo27"]
+[ext_resource type="PackedScene" uid="uid://c0osq77bxj2bw" path="res://scenes/laser_beam.tscn" id="4_supc3"]
+[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/activation_plate.tscn" id="6_4xrby"]
+[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="7_ttqhx"]
+[ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/tile_map_unit_18px.png" id="8_nm2rn"]
+[ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="9_kohgt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3imup"]
-texture = ExtResource("5_2l4eq")
+texture = ExtResource("8_nm2rn")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -118,71 +117,59 @@ size = Vector2(6, 270)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqdyo"]
 size = Vector2(282, 6)
 
-[node name="Game" type="Node2D"]
-script = ExtResource("1_n4xvt")
+[node name="StartLevel" type="Node2D"]
+script = ExtResource("1_wejfc")
 metadata/_edit_vertical_guides_ = [51.0, 321.0, 327.0, 45.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
 metadata/_edit_horizontal_guides_ = [321.0, 51.0, 45.0, 327.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
 
+[node name="UI" parent="." instance=ExtResource("2_ewd5e")]
+
 [node name="Background" type="Node2D" parent="."]
-script = ExtResource("1_5kbue")
+script = ExtResource("3_lmo27")
 
-[node name="LaserBeam" parent="." instance=ExtResource("6_0f2ra")]
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="LaserBeam" parent="Objects" instance=ExtResource("4_supc3")]
 position = Vector2(287, 69)
 
-[node name="LaserBeamEmiter" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(287, 69)
-texture = ExtResource("9_7e4h6")
+[node name="ActivationPlate" parent="Objects" instance=ExtResource("6_4xrby")]
+position = Vector2(63, 60)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Chest" parent="Objects" instance=ExtResource("7_ttqhx")]
+position = Vector2(249, 268)
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Map"]
 texture_filter = 1
 position = Vector2(51, 51)
 tile_set = SubResource("TileSet_hktew")
 format = 2
 layer_0/tile_data = PackedInt32Array(851968, 458752, 0, 851969, 458752, 0, 851970, 131072, 1, 786432, 393216, 0, 786433, 393216, 0, 786434, 131072, 0, 917508, 393216, 1, 786437, 131072, 0, 851973, 458752, 1, 917509, 458752, 1, 589828, 65536, 1, 589829, 131072, 1, 524293, 655360, 1, 524292, 393216, 1, 524294, 458752, 0, 524295, 458752, 0, 524296, 458752, 0, 458760, 393216, 0, 458759, 393216, 0, 458758, 393216, 0, 458757, 393216, 0, 458756, 65536, 0, 458761, 393216, 0, 524297, 458752, 0, 524298, 458752, 0, 458762, 393216, 0, 458763, 393216, 0, 524299, 458752, 0, 524300, 458752, 0, 458764, 393216, 0, 458765, 393216, 0, 524301, 458752, 0, 524302, 458752, 0, 458766, 393216, 0, 589824, 458752, 0, 589825, 131072, 1, 524288, 524288, 0, 524289, 458752, 1, 458753, 458752, 1, 458752, 524288, 0, 262144, 131072, 0, 327680, 458752, 1, 393216, 655360, 0, 196613, 65536, 0, 262149, 393216, 1, 327685, 65536, 1, 327686, 458752, 0, 327687, 458752, 0, 327688, 458752, 0, 327689, 458752, 0, 262153, 524288, 0, 262154, 458752, 1, 327690, 131072, 1, 196618, 131072, 0, 196617, 393216, 0, 196616, 393216, 0, 196615, 393216, 0, 196614, 393216, 0, 262150, 524288, 0, 262151, 524288, 0, 262152, 524288, 0, 65542, 327680, 1, 65543, 262144, 1, 65537, 327680, 1, 65536, 327680, 1, 65538, 327680, 1, 65541, 327680, 1, 65545, 0, 1, 196621, 589824, 0, 262157, 458752, 0, 262158, 458752, 0, 196622, 524288, 0, 131086, 393216, 0, 131085, 65536, 0, 786436, 65536, 0, 851972, 393216, 1, 196620, 65536, 0, 262156, 65536, 1, 14, 524288, 1, 196611, 0, 1, 393217, 131072, 0, 65539, 327680, 1, 65540, 327680, 1)
 
-[node name="ActivationPlate" parent="." instance=ExtResource("8_fyf2p")]
-position = Vector2(63, 60)
-
-[node name="Chest" parent="." instance=ExtResource("3_rqovp")]
-position = Vector2(249, 268)
-
-[node name="Player" parent="." instance=ExtResource("2_7b6k8")]
-position = Vector2(-18, -18)
-
-[node name="GameBorders" type="StaticBody2D" parent="."]
+[node name="GameBorders" type="StaticBody2D" parent="Map"]
 collision_layer = 4
 collision_mask = 3
 
-[node name="Top" type="CollisionShape2D" parent="GameBorders"]
+[node name="Top" type="CollisionShape2D" parent="Map/GameBorders"]
 position = Vector2(186, 48)
 shape = SubResource("RectangleShape2D_kseiu")
 
-[node name="Left" type="CollisionShape2D" parent="GameBorders"]
+[node name="Left" type="CollisionShape2D" parent="Map/GameBorders"]
 position = Vector2(48, 186)
 shape = SubResource("RectangleShape2D_flt1s")
 
-[node name="Right" type="CollisionShape2D" parent="GameBorders"]
+[node name="Right" type="CollisionShape2D" parent="Map/GameBorders"]
 position = Vector2(324, 186)
 shape = SubResource("RectangleShape2D_ilcjv")
 
-[node name="Bottom" type="CollisionShape2D" parent="GameBorders"]
+[node name="Bottom" type="CollisionShape2D" parent="Map/GameBorders"]
 position = Vector2(186, 324)
 shape = SubResource("RectangleShape2D_pqdyo")
 
-[node name="Info" parent="." instance=ExtResource("7_xcppg")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-offset_left = 186.0
-offset_top = 365.0
-offset_right = 186.0
-offset_bottom = 365.0
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 8
+[node name="Player" parent="." instance=ExtResource("9_kohgt")]
+position = Vector2(-18, -18)
 
-[connection signal="player_touch" from="LaserBeam" to="Player" method="_on_laser_beam_player_touch"]
-[connection signal="chest_outside" from="ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
-[connection signal="chest_touch" from="ActivationPlate" to="." method="_on_activation_plate_chest_touch"]
+[connection signal="player_touch" from="Objects/LaserBeam" to="Player" method="_on_laser_beam_player_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]

@@ -1,10 +1,10 @@
 extends Node2D
 
-@onready var laser_beam: LaserBeam = $LaserBeam
-@onready var activation_plate: ActivationPlate = $ActivationPlate
+@onready var laser_beam: LaserBeam = $Objects/LaserBeam
+@onready var activation_plate: ActivationPlate = $Objects/ActivationPlate
  
 func _on_activation_plate_chest_touch() -> void:
-	laser_beam.off_laser()
+	laser_beam.off_laser(Vector2(0, 38))
 	activation_plate.on_power_plate()
 
 func _on_activation_plate_chest_outside() -> void:

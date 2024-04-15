@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Background
+
 func _draw() -> void:
 	
 	# CANVAS AREA - true, -1.0 because is filled rect

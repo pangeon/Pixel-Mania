@@ -46,4 +46,8 @@ frame_progress = 0.0983291
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_4o7jd")
 
+[node name="LaserBeamEmiter" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jawex")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
