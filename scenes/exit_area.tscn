@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2qevafp5drm4"]
+
+[ext_resource type="Texture2D" uid="uid://djnvgqq8neo6m" path="res://assets/exit_area_18px.png" id="1_efrxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mols"]
+size = Vector2(1, 18)
+
+[node name="ExitArea" type="Area2D"]
+collision_layer = 64
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_efrxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 0)
+shape = SubResource("RectangleShape2D_4mols")

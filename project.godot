@@ -23,6 +23,8 @@ Globals="*res://globals.gd"
 
 window/size/viewport_width=372
 window/size/viewport_height=372
+window/size/window_width_override=744
+window/size/window_height_override=744
 window/stretch/mode="viewport"
 
 [editor_plugins]
@@ -65,6 +67,9 @@ reset={
 2d_physics/layer_4="tilemap"
 2d_physics/layer_5="laser"
 2d_physics/layer_6="activation_plate"
+2d_physics/size/window_height_override=0
+2d_physics/size/window_width_override=0
+2d_physics/stretch/scale=2.0
 
 [physics]
 
