@@ -32,8 +32,20 @@ func _physics_process(_delta: float) -> void:
 func print_player_position() -> void:
 	print("x=", int(position.x), " | y=", int(position.y))
 
-func _on_laser_beam_player_touch():
+func _on_laser_beam_player_touch() -> void:
+	_reset()
+
+func _on_laser_beam_2_player_touch() -> void:
+	_reset()
+
+func _on_laser_beam_3_player_touch() -> void:
 	_reset()
 
 func _reset():
 	get_tree().reload_current_scene()
+
+
+
+
+
+

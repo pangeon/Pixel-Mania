@@ -13,10 +13,10 @@ func _on_body_entered(_body: Node2D) -> void:
 func _on_body_exited(_body: Node2D) -> void:
 	chest_outside.emit()
 
-func on_power_plate() -> void:
+func on() -> void:
 	animation_power.play("on")
 
-func off_power_plate() -> void:
+func off() -> void:
 	animation_power.play("off")
 
 

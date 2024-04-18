@@ -14,11 +14,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Chest:
 		chest_touch.emit()
 		
-func off_laser(change_laser_position: Vector2) -> void:
-	animation_sprite.position = change_laser_position
-	collision_shape.position = change_laser_position
+func off() -> void:
+	animation_sprite.position = Vector2(558, 558)
+	collision_shape.position = Vector2(558, 558)
 
-func on_laser() -> void:
-	animation_sprite.position.y = 0
-	collision_shape.position.y = 0
+func on() -> void:
+	animation_sprite.position = Vector2(0, 0)
+	collision_shape.position = Vector2(0, 0)
 	
