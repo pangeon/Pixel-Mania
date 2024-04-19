@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dy2dvatu5wqm0"]
+[gd_scene load_steps=14 format=3 uid="uid://dy2dvatu5wqm0"]
 
 [ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="1_akbja"]
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_c6t10"]
 [ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/ui.tscn" id="1_f1mvb"]
 [ext_resource type="PackedScene" uid="uid://b5pdajt2ljd4g" path="res://scenes/background.tscn" id="1_wg0fy"]
-[ext_resource type="PackedScene" uid="uid://bixnsfbw5h3tg" path="res://scenes/start_level.tscn" id="2_hnl58"]
 [ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/game_music_background.tscn" id="2_ucjq5"]
 [ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/game_borders.tscn" id="3_58koe"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/exit_area.tscn" id="4_dydcn"]
@@ -111,7 +110,6 @@ sources/0 = SubResource("TileSetAtlasSource_3imup")
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_c6t10")
-next_level = ExtResource("2_hnl58")
 
 [node name="SFX" type="Node2D" parent="."]
 

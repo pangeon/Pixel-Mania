@@ -27,6 +27,10 @@ window/size/window_width_override=744
 window/size/window_height_override=744
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Pixel Mania"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/wakatime/plugin.cfg")
