@@ -46,8 +46,14 @@ func _on_laser_beam_2_player_touch() -> void:
 func _on_laser_beam_3_player_touch() -> void:
 	_reset()
 
+func _on_laser_beam_4_player_touch() -> void:
+	_reset()
+
 func _reset():
 	get_tree().reload_current_scene()
+
+
+
 
 
 

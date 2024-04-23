@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxdkejps471t0"]
+[gd_scene load_steps=15 format=3 uid="uid://cxdkejps471t0"]
 
 [ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/ui.tscn" id="1_0niqx"]
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_7ekim"]
 [ext_resource type="PackedScene" uid="uid://b5pdajt2ljd4g" path="res://scenes/background.tscn" id="2_7f16g"]
+[ext_resource type="PackedScene" uid="uid://c2gan4ir4us4u" path="res://scenes/level_4.tscn" id="2_8hlsp"]
 [ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/game_music_background.tscn" id="2_ekdjn"]
 [ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/game_borders.tscn" id="3_pron7"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="4_6hma2"]
@@ -107,6 +108,7 @@ sources/0 = SubResource("TileSetAtlasSource_4j0e2")
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_7ekim")
+next_level = ExtResource("2_8hlsp")
 
 [node name="SFX" type="Node2D" parent="."]
 

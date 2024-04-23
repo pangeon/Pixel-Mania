@@ -12,42 +12,41 @@ class_name Level3
 
 var lock_laser_beam: Array[bool] = [false, false, false, false]
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if lock_laser_beam == [true, true, true, true]:
 		laser_beam.off()
 	else:
 		laser_beam.on()
 
-func _on_activation_plate_chest_touch():
+func _on_activation_plate_chest_touch() -> void:
 	lock_laser_beam[0] = true
 	activation_plates[0].on()
 
-func _on_activation_plate_2_chest_touch():
+func _on_activation_plate_2_chest_touch() -> void:
 	lock_laser_beam[1] = true
 	activation_plates[1].on()
 
-func _on_activation_plate_3_chest_touch():
+func _on_activation_plate_3_chest_touch() -> void:
 	lock_laser_beam[2] = true
 	activation_plates[2].on()
 
-func _on_activation_plate_4_chest_touch():
+func _on_activation_plate_4_chest_touch()  -> void:
 	lock_laser_beam[3] = true
 	activation_plates[3].on()
 
 
-
-func _on_activation_plate_chest_outside():
+func _on_activation_plate_chest_outside() -> void:
 	lock_laser_beam[0] = false
 	activation_plates[0].off()
 
-func _on_activation_plate_2_chest_outside():
+func _on_activation_plate_2_chest_outside() -> void:
 	lock_laser_beam[1] = false
 	activation_plates[1].off()
 
-func _on_activation_plate_3_chest_outside():
+func _on_activation_plate_3_chest_outside() -> void:
 	lock_laser_beam[2] = false
 	activation_plates[2].off()
 
-func _on_activation_plate_4_chest_outside():
+func _on_activation_plate_4_chest_outside() -> void:
 	lock_laser_beam[3] = false
 	activation_plates[3].off()
