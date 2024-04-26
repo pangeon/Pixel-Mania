@@ -1,0 +1,222 @@
+[gd_scene load_steps=19 format=3 uid="uid://bhsmb7jj5wemw"]
+
+[ext_resource type="Script" path="res://scripts/level_4.gd" id="1_dy53o"]
+[ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/components/game_music_background.tscn" id="1_wc47h"]
+[ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/components/ui.tscn" id="2_74ckh"]
+[ext_resource type="PackedScene" uid="uid://b5pdajt2ljd4g" path="res://scenes/components/background.tscn" id="3_hllmb"]
+[ext_resource type="AudioStream" uid="uid://bsg662wmgt0xd" path="res://assets/music/background_music_4.mp3" id="3_p1glv"]
+[ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="4_1dawl"]
+[ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="4_kmbkx"]
+[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="5_g28uy"]
+[ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/components/player.tscn" id="5_lnfep"]
+[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="9_p02m6"]
+[ext_resource type="Texture2D" uid="uid://bfke3di2b1yck" path="res://assets/img/ice_chest_16-24px.png" id="9_roltf"]
+[ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/img/tile_map_unit_18px.png" id="10_22w5b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7pip"]
+texture = ExtResource("10_22w5b")
+texture_region_size = Vector2i(18, 18)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+7:0/0 = 0
+7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:0/0/physics_layer_0/angular_velocity = 0.0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+9:0/0 = 0
+9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:0/0/physics_layer_0/angular_velocity = 0.0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+10:0/0 = 0
+10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:0/0/physics_layer_0/angular_velocity = 0.0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+6:1/0 = 0
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+7:1/0 = 0
+7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+8:1/0 = 0
+8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:1/0/physics_layer_0/angular_velocity = 0.0
+9:1/0 = 0
+9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:1/0/physics_layer_0/angular_velocity = 0.0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+10:1/0 = 0
+10:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:1/0/physics_layer_0/angular_velocity = 0.0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.875, -7.875, 7.875, -7.875, 7.875, 7.875, -7.875, 7.875)
+
+[sub_resource type="TileSet" id="TileSet_tdsum"]
+tile_size = Vector2i(18, 18)
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_m7pip")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03one"]
+size = Vector2(282, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv1i5"]
+size = Vector2(6, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ghsk"]
+size = Vector2(6, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npk40"]
+size = Vector2(282, 6)
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_dy53o")
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="GameMusicBackground" parent="SFX" instance=ExtResource("1_wc47h")]
+stream = ExtResource("3_p1glv")
+
+[node name="UI" parent="." instance=ExtResource("2_74ckh")]
+level = 4
+
+[node name="Background" parent="." instance=ExtResource("3_hllmb")]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="LaserBeam" parent="Objects" instance=ExtResource("4_1dawl")]
+position = Vector2(186, 114)
+scale = Vector2(1, 3.5)
+
+[node name="LaserBeam2" parent="Objects" instance=ExtResource("4_1dawl")]
+position = Vector2(258, 186)
+rotation = 1.5708
+scale = Vector2(1, 3.5)
+
+[node name="LaserBeam3" parent="Objects" instance=ExtResource("4_1dawl")]
+position = Vector2(114, 186)
+rotation = -1.5708
+scale = Vector2(1, 3.5)
+
+[node name="LaserBeam4" parent="Objects" instance=ExtResource("4_1dawl")]
+position = Vector2(186, 258)
+rotation = 3.14159
+scale = Vector2(1, 3.5)
+
+[node name="ActivationPlate" parent="Objects" instance=ExtResource("9_p02m6")]
+position = Vector2(100, 113)
+
+[node name="ActivationPlate2" parent="Objects" instance=ExtResource("9_p02m6")]
+position = Vector2(237, 150)
+
+[node name="ActivationPlate3" parent="Objects" instance=ExtResource("9_p02m6")]
+position = Vector2(309, 96)
+
+[node name="ActivationPlate4" parent="Objects" instance=ExtResource("9_p02m6")]
+position = Vector2(219, 258)
+
+[node name="Chest" parent="Objects" instance=ExtResource("5_g28uy")]
+position = Vector2(109, 250)
+max_speed = 30.0
+chest_texture = ExtResource("9_roltf")
+
+[node name="Chest2" parent="Objects" instance=ExtResource("5_g28uy")]
+position = Vector2(214, 83)
+rotation = 1.5708
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Map"]
+texture_filter = 1
+position = Vector2(51, 51)
+tile_set = SubResource("TileSet_tdsum")
+format = 2
+layer_0/tile_data = PackedInt32Array(458759, 0, 1, 131074, 196608, 1, 131076, 262144, 1, 131075, 327680, 1, 196614, 0, 1, 393221, 0, 1, 196608, 262144, 1, 196619, 65536, 0, 196620, 131072, 0, 393227, 65536, 1, 393228, 131072, 1, 262155, 393216, 1, 327692, 458752, 1, 262156, 458752, 1, 8, 65536, 1, 9, 131072, 1, 327691, 393216, 1, 262152, 0, 1, 65547, 196608, 1, 65548, 262144, 1, 917515, 0, 1, 851978, 0, 1, 851980, 0, 1, 720906, 65536, 1, 720907, 458752, 0, 720908, 131072, 1, 655372, 458752, 1, 655371, 524288, 0, 655370, 393216, 1, 589834, 65536, 0, 589835, 393216, 0, 589836, 131072, 0, 786440, 196608, 1, 524297, 0, 1, 786441, 262144, 1, 917509, 65536, 0, 917510, 131072, 0)
+
+[node name="GameBorders" type="StaticBody2D" parent="Map"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Top" type="CollisionShape2D" parent="Map/GameBorders"]
+position = Vector2(186, 48)
+shape = SubResource("RectangleShape2D_03one")
+
+[node name="Left" type="CollisionShape2D" parent="Map/GameBorders"]
+position = Vector2(48, 186)
+shape = SubResource("RectangleShape2D_vv1i5")
+
+[node name="Right" type="CollisionShape2D" parent="Map/GameBorders"]
+position = Vector2(324, 186)
+shape = SubResource("RectangleShape2D_5ghsk")
+
+[node name="Bottom" type="CollisionShape2D" parent="Map/GameBorders"]
+position = Vector2(186, 324)
+shape = SubResource("RectangleShape2D_npk40")
+
+[node name="ExitArea" parent="Map" instance=ExtResource("4_kmbkx")]
+position = Vector2(258, 294)
+rotation = 1.5708
+
+[node name="Player" parent="." instance=ExtResource("5_lnfep")]
+
+[connection signal="player_touch" from="Objects/LaserBeam" to="Player" method="_on_laser_beam_player_touch"]
+[connection signal="player_touch" from="Objects/LaserBeam2" to="Player" method="_on_laser_beam_2_player_touch"]
+[connection signal="player_touch" from="Objects/LaserBeam3" to="Player" method="_on_laser_beam_3_player_touch"]
+[connection signal="player_touch" from="Objects/LaserBeam4" to="Player" method="_on_laser_beam_4_player_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate4" to="." method="_on_activation_plate_4_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate4" to="." method="_on_activation_plate_4_chest_touch"]

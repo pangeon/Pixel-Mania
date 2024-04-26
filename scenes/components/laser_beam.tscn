@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi5deb2iy8e4l"]
+
+[ext_resource type="Script" path="res://scripts/laser_beam.gd" id="1_60uol"]
+[ext_resource type="Texture2D" uid="uid://daq6owk52lw5c" path="res://assets/img/laser-beam-2x-off.png" id="2_y6ww2"]
+[ext_resource type="Texture2D" uid="uid://bq32jikdt3xa8" path="res://assets/img/laser-beam-2x1.png" id="3_jqfyh"]
+[ext_resource type="Texture2D" uid="uid://dahcq50wmsxt3" path="res://assets/img/laser-beam-2x2.png" id="4_5vckc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0km0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y6ww2")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jqfyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5vckc")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o7jd"]
+size = Vector2(1, 36)
+
+[node name="LaserBeam" type="Area2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_60uol")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_x0km0")
+animation = &"on"
+autoplay = "on"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_4o7jd")
+
+[node name="LaserBeamEmiter" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_y6ww2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

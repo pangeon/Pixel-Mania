@@ -5,9 +5,32 @@
 
 # Screens:
 <p align="center">
-    <img src="screen_1.png" width="300" title="screen_1">
-    <img src="screen_2.png" width="300" title="screen_2">
+    <img src="screens/screen_1.png" width="300" title="screen_1">
+    <img src="screens/screen_2.png" width="300" title="screen_2">
+    <img src="screens/screen_3.png" width="300" title="screen_2">
+    <img src="screens/screen_4.png" width="300" title="screen_2">
 <p>
 
 # Changelog:
-- **0.1 beta**: add level 2   
+- **0.1 beta**: 
+    - add level 2
+- **0.2 beta**: 
+    - add level 3 and 4 
+    - add more music soundtracks
+    - change player control speed
+
+# Credits
+
+### Programming and level design:     
+* [Kamil Cecherz](https://cecherz.pl/)
+
+### Background music:
+* [GregorQuendel](https://freesound.org/people/GregorQuendel/)
+
+    #### Playlist:
+    ---
+    1. [Chopin - Nocturne Op. 27 No. 2](https://freesound.org/people/GregorQuendel/sounds/706660/)
+    2. [Granados - Spanish Dance No. 2, Oriental](https://freesound.org/people/GregorQuendel/sounds/710599/)
+    3. [Bach - The Well-Tempered Clavier - Book 1 - 1. Prelude C Major - BWV 846](https://freesound.org/people/GregorQuendel/sounds/710142/)
+    4. [Debussy - Arabesque No. 1](https://freesound.org/people/GregorQuendel/sounds/706299/)
+    ---

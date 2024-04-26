@@ -4,7 +4,7 @@ class_name Chest
 
 @export var max_speed: float = 0
 @export var gravity: float = 0
-@export var chest_texture: Texture2D = preload("res://assets/chest_16-24px.png")
+@export var chest_texture: Texture2D = preload("res://assets/img/chest_16-24px.png")
 
 func _ready() -> void:
 	set_gravity_scale(gravity)

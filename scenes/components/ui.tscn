@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbx4xe41ugv74"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_fko8i"]
+[ext_resource type="PackedScene" uid="uid://cs2npj5lu5xaa" path="res://scenes/components/info.tscn" id="1_ulf7r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0bd2e"]
+font_color = Color(0.933333, 1, 0.8, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_fko8i")
+
+[node name="Info" parent="." instance=ExtResource("1_ulf7r")]
+offset_top = 332.0
+offset_bottom = -4.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_top = 11.0
+offset_right = 31.5
+offset_bottom = 37.0
+grow_horizontal = 2
+text = "LEVEL: 1"
+label_settings = SubResource("LabelSettings_0bd2e")
