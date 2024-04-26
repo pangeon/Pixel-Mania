@@ -1,15 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2gan4ir4us4u"]
+[gd_scene load_steps=19 format=3 uid="uid://c2gan4ir4us4u"]
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_dy53o"]
 [ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/game_music_background.tscn" id="1_wc47h"]
 [ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/ui.tscn" id="2_74ckh"]
 [ext_resource type="PackedScene" uid="uid://b5pdajt2ljd4g" path="res://scenes/background.tscn" id="3_hllmb"]
+[ext_resource type="AudioStream" uid="uid://bsg662wmgt0xd" path="res://assets/music/background_music_4.mp3" id="3_p1glv"]
 [ext_resource type="PackedScene" uid="uid://c0osq77bxj2bw" path="res://scenes/laser_beam.tscn" id="4_1dawl"]
 [ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/tile_map_unit_18px.png" id="4_bu8qd"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/exit_area.tscn" id="4_kmbkx"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="5_g28uy"]
 [ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="5_lnfep"]
 [ext_resource type="Texture2D" uid="uid://bfke3di2b1yck" path="res://assets/ice_chest_16-24px.png" id="7_namki"]
+[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/activation_plate.tscn" id="9_p02m6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7pip"]
 texture = ExtResource("4_bu8qd")
@@ -122,6 +124,7 @@ script = ExtResource("1_dy53o")
 [node name="SFX" type="Node2D" parent="."]
 
 [node name="GameMusicBackground" parent="SFX" instance=ExtResource("1_wc47h")]
+stream = ExtResource("3_p1glv")
 
 [node name="UI" parent="." instance=ExtResource("2_74ckh")]
 level = 4
@@ -149,7 +152,10 @@ position = Vector2(186, 258)
 rotation = 3.14159
 scale = Vector2(1, 3.5)
 
-[node name="Chest" parent="Objects" instance=ExtResource("5_g28uy")]
+[node name="ActivationPlate" parent="Objects" instance=ExtResource("9_p02m6")]
+position = Vector2(100, 113)
+
+[node name="Chest" parent="." instance=ExtResource("5_g28uy")]
 position = Vector2(109, 244)
 max_speed = 30.0
 chest_texture = ExtResource("7_namki")
@@ -161,7 +167,7 @@ texture_filter = 1
 position = Vector2(51, 51)
 tile_set = SubResource("TileSet_tdsum")
 format = 2
-layer_0/tile_data = PackedInt32Array(458759, 0, 1)
+layer_0/tile_data = PackedInt32Array(458759, 0, 1, 131074, 196608, 1, 131076, 262144, 1, 131075, 327680, 1, 196614, 0, 1, 393221, 0, 1, 196608, 0, 1)
 
 [node name="GameBorders" type="StaticBody2D" parent="Map"]
 collision_layer = 4
@@ -192,3 +198,5 @@ position = Vector2(312, 312)
 [connection signal="player_touch" from="Objects/LaserBeam2" to="Player" method="_on_laser_beam_2_player_touch"]
 [connection signal="player_touch" from="Objects/LaserBeam3" to="Player" method="_on_laser_beam_3_player_touch"]
 [connection signal="player_touch" from="Objects/LaserBeam4" to="Player" method="_on_laser_beam_4_player_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]

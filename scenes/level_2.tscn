@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dy2dvatu5wqm0"]
+[gd_scene load_steps=16 format=3 uid="uid://dy2dvatu5wqm0"]
 
 [ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/player.tscn" id="1_akbja"]
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_c6t10"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxdkejps471t0" path="res://scenes/level_3.tscn" id="2_5vm6t"]
 [ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/game_music_background.tscn" id="2_ucjq5"]
 [ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/game_borders.tscn" id="3_58koe"]
+[ext_resource type="AudioStream" uid="uid://d34gci1m20x6s" path="res://assets/music/background_music_2.mp3" id="4_6xv3e"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/exit_area.tscn" id="4_dydcn"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/chest.tscn" id="4_ll0t3"]
 [ext_resource type="PackedScene" uid="uid://c0osq77bxj2bw" path="res://scenes/laser_beam.tscn" id="5_88v21"]
@@ -113,6 +114,7 @@ next_level = ExtResource("2_5vm6t")
 [node name="SFX" type="Node2D" parent="."]
 
 [node name="GameMusicBackground" parent="SFX" instance=ExtResource("2_ucjq5")]
+stream = ExtResource("4_6xv3e")
 
 [node name="UI" parent="." instance=ExtResource("1_f1mvb")]
 level = 2
