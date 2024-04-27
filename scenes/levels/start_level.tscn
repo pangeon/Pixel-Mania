@@ -178,6 +178,5 @@ position = Vector2(312, 60)
 [node name="Player" parent="." instance=ExtResource("11_lmflv")]
 position = Vector2(-18, -18)
 
-[connection signal="player_touch" from="Objects/LaserBeam" to="Player" method="_on_laser_beam_player_touch"]
 [connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
 [connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]

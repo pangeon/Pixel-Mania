@@ -8,6 +8,10 @@ var warp_speed: float = 1
 
 func _ready() -> void:
 	position = Globals.PLAYER_START # (51, 303)
+	var laser_beams: Array[Node] = get_tree().get_nodes_in_group("laser_beams")
+	
+	for laser in laser_beams:
+		laser.player_touch.connect(_on_laser_beam_player_touch)
 
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO
@@ -38,15 +42,6 @@ func print_player_position() -> void:
 	print("x=", int(position.x), " | y=", int(position.y))
 
 func _on_laser_beam_player_touch() -> void:
-	_reset()
-
-func _on_laser_beam_2_player_touch() -> void:
-	_reset()
-
-func _on_laser_beam_3_player_touch() -> void:
-	_reset()
-
-func _on_laser_beam_4_player_touch() -> void:
 	_reset()
 
 func _reset():

@@ -177,4 +177,3 @@ position = Vector2(312, 312)
 [connection signal="chest_touch" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_touch"]
 [connection signal="chest_outside" from="Objects/ActivationPlate4" to="." method="_on_activation_plate_4_chest_outside"]
 [connection signal="chest_touch" from="Objects/ActivationPlate4" to="." method="_on_activation_plate_4_chest_touch"]
-[connection signal="player_touch" from="Objects/LaserBeam" to="Player" method="_on_laser_beam_player_touch"]

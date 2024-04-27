@@ -9,14 +9,16 @@ signal chest_outside
 
 func _on_body_entered(_body: Node2D) -> void:
 	chest_touch.emit()
+	_on()
 	
 func _on_body_exited(_body: Node2D) -> void:
 	chest_outside.emit()
+	_off()
 
-func on() -> void:
+func _on() -> void:
 	animation_power.play("on")
 
-func off() -> void:
+func _off() -> void:
 	animation_power.play("off")
 
 
