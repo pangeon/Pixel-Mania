@@ -1,6 +1,8 @@
 # Pixel Mania:
 <p align="center">
     <img src="icon.svg" width="200" title="game logo">
+    <br />
+    <a href="https://cecherz.itch.io/pixel-mania">Play online</a>
 <p>
 
 # Screens:
