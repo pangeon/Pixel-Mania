@@ -1,14 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhsmb7jj5wemw"]
+[gd_scene load_steps=14 format=3 uid="uid://bhsmb7jj5wemw"]
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_dy53o"]
-[ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/components/game_music_background.tscn" id="1_wc47h"]
-[ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/components/ui.tscn" id="2_74ckh"]
-[ext_resource type="PackedScene" uid="uid://b5pdajt2ljd4g" path="res://scenes/components/background.tscn" id="3_hllmb"]
-[ext_resource type="AudioStream" uid="uid://bsg662wmgt0xd" path="res://assets/music/background_music_4.mp3" id="3_p1glv"]
 [ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="4_1dawl"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="4_kmbkx"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="5_g28uy"]
-[ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/components/player.tscn" id="5_lnfep"]
 [ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="9_p02m6"]
 [ext_resource type="Texture2D" uid="uid://bfke3di2b1yck" path="res://assets/img/ice_chest_16-24px.png" id="9_roltf"]
 [ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/img/tile_map_unit_18px.png" id="10_22w5b"]
@@ -121,16 +116,6 @@ size = Vector2(282, 6)
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_dy53o")
 
-[node name="SFX" type="Node2D" parent="."]
-
-[node name="GameMusicBackground" parent="SFX" instance=ExtResource("1_wc47h")]
-stream = ExtResource("3_p1glv")
-
-[node name="UI" parent="." instance=ExtResource("2_74ckh")]
-level = 4
-
-[node name="Background" parent="." instance=ExtResource("3_hllmb")]
-
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="LaserBeam" parent="Objects" instance=ExtResource("4_1dawl")]
@@ -205,8 +190,6 @@ shape = SubResource("RectangleShape2D_npk40")
 [node name="ExitArea" parent="Map" instance=ExtResource("4_kmbkx")]
 position = Vector2(258, 294)
 rotation = 1.5708
-
-[node name="Player" parent="." instance=ExtResource("5_lnfep")]
 
 [connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
 [connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]

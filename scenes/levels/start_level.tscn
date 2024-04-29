@@ -1,16 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://yspp5xirbg8g"]
+[gd_scene load_steps=14 format=3 uid="uid://yspp5xirbg8g"]
 
 [ext_resource type="Script" path="res://scripts/start_level.gd" id="1_wgawd"]
 [ext_resource type="PackedScene" uid="uid://pgcso5d8ijv5" path="res://scenes/levels/level_2.tscn" id="2_qi3yc"]
-[ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/components/game_music_background.tscn" id="3_pwbhl"]
-[ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/components/ui.tscn" id="4_51sfm"]
-[ext_resource type="PackedScene" uid="uid://b5pdajt2ljd4g" path="res://scenes/components/background.tscn" id="5_f1l5y"]
 [ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="6_swq6s"]
 [ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="7_v7btj"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="8_juvtn"]
 [ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/img/tile_map_unit_18px.png" id="9_qvmfp"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="10_fugja"]
-[ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/components/player.tscn" id="11_lmflv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5famh"]
 texture = ExtResource("9_qvmfp")
@@ -123,15 +119,6 @@ next_level = ExtResource("2_qi3yc")
 metadata/_edit_vertical_guides_ = [51.0, 321.0, 327.0, 45.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
 metadata/_edit_horizontal_guides_ = [321.0, 51.0, 45.0, 327.0, 69.0, 87.0, 105.0, 123.0, 141.0, 159.0, 177.0, 195.0, 213.0, 231.0, 249.0, 267.0, 285.0, 303.0]
 
-[node name="SFX" type="Node2D" parent="."]
-
-[node name="GameMusicBackground" parent="SFX" instance=ExtResource("3_pwbhl")]
-
-[node name="UI" parent="." instance=ExtResource("4_51sfm")]
-level = 1
-
-[node name="Background" parent="." instance=ExtResource("5_f1l5y")]
-
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="LaserBeam" parent="Objects" instance=ExtResource("6_swq6s")]
@@ -174,9 +161,6 @@ shape = SubResource("RectangleShape2D_pqdyo")
 
 [node name="ExitArea" parent="Map" instance=ExtResource("10_fugja")]
 position = Vector2(312, 60)
-
-[node name="Player" parent="." instance=ExtResource("11_lmflv")]
-position = Vector2(-18, -18)
 
 [connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
 [connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]

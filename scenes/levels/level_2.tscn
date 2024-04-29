@@ -1,13 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://pgcso5d8ijv5"]
+[gd_scene load_steps=11 format=3 uid="uid://pgcso5d8ijv5"]
 
-[ext_resource type="PackedScene" uid="uid://dn8r6m21c5an" path="res://scenes/components/player.tscn" id="1_akbja"]
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_c6t10"]
-[ext_resource type="PackedScene" uid="uid://cbx4xe41ugv74" path="res://scenes/components/ui.tscn" id="1_f1mvb"]
-[ext_resource type="PackedScene" uid="uid://b5pdajt2ljd4g" path="res://scenes/components/background.tscn" id="1_wg0fy"]
 [ext_resource type="PackedScene" uid="uid://cxdkejps471t0" path="res://scenes/levels/level_3.tscn" id="2_ewtxr"]
-[ext_resource type="PackedScene" uid="uid://daim7nif478fq" path="res://scenes/components/game_music_background.tscn" id="2_ucjq5"]
 [ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="3_58koe"]
-[ext_resource type="AudioStream" uid="uid://d34gci1m20x6s" path="res://assets/music/background_music_2.mp3" id="4_6xv3e"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="4_dydcn"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="4_ll0t3"]
 [ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="5_88v21"]
@@ -111,16 +106,6 @@ sources/4 = SubResource("TileSetAtlasSource_417mx")
 script = ExtResource("1_c6t10")
 next_level = ExtResource("2_ewtxr")
 
-[node name="SFX" type="Node2D" parent="."]
-
-[node name="GameMusicBackground" parent="SFX" instance=ExtResource("2_ucjq5")]
-stream = ExtResource("4_6xv3e")
-
-[node name="UI" parent="." instance=ExtResource("1_f1mvb")]
-level = 2
-
-[node name="Background" parent="." instance=ExtResource("1_wg0fy")]
-
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="ActivationPlate" parent="Objects" instance=ExtResource("7_hffhj")]
@@ -175,8 +160,6 @@ layer_0/tile_data = PackedInt32Array(589831, 524292, 1, 524294, 458756, 0, 45875
 
 [node name="ExitArea" parent="Map" instance=ExtResource("4_dydcn")]
 position = Vector2(186, 222)
-
-[node name="Player" parent="." instance=ExtResource("1_akbja")]
 
 [connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
 [connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]
