@@ -7,10 +7,17 @@ class_name Level3
 var lock_laser_beam: Array[bool] = [false, false, false, false]
 
 func _init() -> void:
-	add_ui_component(3)
-	add_sfx_component("res://assets/music/background_music_3.mp3")
-	add_background_component()
-	add_player_component()
+	var component_manager: Component = Component.new()
+	
+	var components: Array[Node] = [
+		component_manager.get_ui(3),
+		component_manager.get_sfx("res://assets/music/background_music_3.mp3"),
+		component_manager.get_background(),
+		component_manager.get_player()
+		]
+		
+	for component in components:
+		$".".add_child(component)
 
 func _process(_delta) -> void:
 	if lock_laser_beam == [true, true, true, true]:
@@ -41,30 +48,3 @@ func _on_activation_plate_3_chest_outside() -> void:
 
 func _on_activation_plate_4_chest_outside() -> void:
 	lock_laser_beam[3] = false
-
-func add_background_component(scene_name: String = "Background", order: int = -1) -> void:
-	var scene_instance: Background = preload("res://scenes/components/background.tscn").instantiate()
-	scene_instance.name = scene_name
-	scene_instance.z_index = order
-	$".".add_child(scene_instance)
-
-func add_player_component(scene_name: String = "Player", order: int = 1) -> void:
-	var scene_instance: Player = preload("res://scenes/components/player.tscn").instantiate()
-	scene_instance.name = scene_name
-	scene_instance.z_index = order
-	$".".add_child(scene_instance)
-
-func add_sfx_component(stream_path: String, scene_name: String = "SFX", order: int = 0) -> void:
-	var scene_instance: AudioStreamPlayer2D = preload("res://scenes/components/game_music_background.tscn").instantiate()
-	scene_instance.set_stream(load(stream_path))
-	var container: Node2D = Node2D.new()
-	container.name = scene_name
-	container.z_index = order
-	container.add_child(scene_instance)
-	$".".add_child(container)
-	
-func add_ui_component(level: int, scene_name: String = "UI") -> void:
-	var scene_instance: CanvasLayer = preload("res://scenes/components/ui.tscn").instantiate()
-	scene_instance.level = level
-	scene_instance.name = scene_name
-	$".".add_child(scene_instance)

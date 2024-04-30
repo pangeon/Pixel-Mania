@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://yspp5xirbg8g"]
+[gd_scene load_steps=11 format=3 uid="uid://yspp5xirbg8g"]
 
 [ext_resource type="Script" path="res://scripts/start_level.gd" id="1_wgawd"]
 [ext_resource type="PackedScene" uid="uid://pgcso5d8ijv5" path="res://scenes/levels/level_2.tscn" id="2_qi3yc"]
 [ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="6_swq6s"]
+[ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="7_uuy6w"]
 [ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="7_v7btj"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="8_juvtn"]
 [ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/img/tile_map_unit_18px.png" id="9_qvmfp"]
@@ -101,18 +102,6 @@ physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 7
 sources/3 = SubResource("TileSetAtlasSource_5famh")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kseiu"]
-size = Vector2(282, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_flt1s"]
-size = Vector2(6, 270)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilcjv"]
-size = Vector2(6, 270)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqdyo"]
-size = Vector2(282, 6)
-
 [node name="StartLevel" type="Node2D"]
 script = ExtResource("1_wgawd")
 next_level = ExtResource("2_qi3yc")
@@ -139,25 +128,7 @@ tile_set = SubResource("TileSet_hktew")
 format = 2
 layer_0/tile_data = PackedInt32Array(851968, 458755, 0, 851969, 458755, 0, 851970, 131075, 1, 786432, 393219, 0, 786433, 393219, 0, 786434, 131075, 0, 917508, 393219, 1, 786437, 131075, 0, 851973, 458755, 1, 917509, 458755, 1, 589828, 65539, 1, 589829, 131075, 1, 458760, 393219, 0, 458759, 393219, 0, 458758, 393219, 0, 458757, 393219, 0, 458756, 65539, 0, 458761, 393219, 0, 458762, 393219, 0, 458763, 393219, 0, 524300, 458755, 0, 458764, 393219, 0, 458765, 393219, 0, 524301, 458755, 0, 524302, 458755, 0, 458766, 393219, 0, 589824, 458755, 0, 589825, 131075, 1, 524288, 524291, 0, 524289, 458755, 1, 458753, 458755, 1, 458752, 524291, 0, 262144, 131075, 0, 327680, 458755, 1, 393216, 655363, 0, 196613, 65539, 0, 262149, 393219, 1, 327685, 65539, 1, 327686, 458755, 0, 327687, 458755, 0, 327688, 458755, 0, 327689, 458755, 0, 262153, 524291, 0, 262154, 458755, 1, 327690, 131075, 1, 196618, 131075, 0, 196617, 393219, 0, 196616, 393219, 0, 196615, 393219, 0, 196614, 393219, 0, 262150, 524291, 0, 262151, 524291, 0, 262152, 524291, 0, 65542, 327683, 1, 65543, 262147, 1, 65537, 327683, 1, 65536, 327683, 1, 65538, 327683, 1, 65541, 327683, 1, 65545, 3, 1, 196621, 589827, 0, 262157, 458755, 0, 262158, 458755, 0, 196622, 524291, 0, 131086, 393219, 0, 131085, 65539, 0, 786436, 65539, 0, 851972, 393219, 1, 196620, 65539, 0, 262156, 65539, 1, 14, 524291, 1, 196611, 3, 1, 393217, 131075, 0, 65539, 327683, 1, 65540, 327683, 1, 524296, 458755, 0, 524297, 458755, 0, 524298, 458755, 0, 524299, 458755, 0, 524292, 393219, 1, 524293, 655363, 1, 524294, 458755, 0, 524295, 458755, 0)
 
-[node name="GameBorders" type="StaticBody2D" parent="Map"]
-collision_layer = 4
-collision_mask = 3
-
-[node name="Top" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(186, 48)
-shape = SubResource("RectangleShape2D_kseiu")
-
-[node name="Left" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(48, 186)
-shape = SubResource("RectangleShape2D_flt1s")
-
-[node name="Right" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(324, 186)
-shape = SubResource("RectangleShape2D_ilcjv")
-
-[node name="Bottom" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(186, 324)
-shape = SubResource("RectangleShape2D_pqdyo")
+[node name="GameBorders" parent="Map" instance=ExtResource("7_uuy6w")]
 
 [node name="ExitArea" parent="Map" instance=ExtResource("10_fugja")]
 position = Vector2(312, 60)

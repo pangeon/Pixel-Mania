@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhsmb7jj5wemw"]
+[gd_scene load_steps=11 format=3 uid="uid://bhsmb7jj5wemw"]
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_dy53o"]
 [ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="4_1dawl"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="4_kmbkx"]
 [ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="5_g28uy"]
+[ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="7_6j2g7"]
 [ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="9_p02m6"]
 [ext_resource type="Texture2D" uid="uid://bfke3di2b1yck" path="res://assets/img/ice_chest_16-24px.png" id="9_roltf"]
 [ext_resource type="Texture2D" uid="uid://3ted24g1yntk" path="res://assets/img/tile_map_unit_18px.png" id="10_22w5b"]
@@ -101,18 +102,6 @@ physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_m7pip")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_03one"]
-size = Vector2(282, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv1i5"]
-size = Vector2(6, 270)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ghsk"]
-size = Vector2(6, 270)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_npk40"]
-size = Vector2(282, 6)
-
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_dy53o")
 
@@ -167,25 +156,7 @@ tile_set = SubResource("TileSet_tdsum")
 format = 2
 layer_0/tile_data = PackedInt32Array(458759, 0, 1, 131074, 196608, 1, 131076, 262144, 1, 131075, 327680, 1, 196614, 0, 1, 393221, 0, 1, 196608, 262144, 1, 196619, 65536, 0, 196620, 131072, 0, 393227, 65536, 1, 393228, 131072, 1, 262155, 393216, 1, 327692, 458752, 1, 262156, 458752, 1, 8, 65536, 1, 9, 131072, 1, 327691, 393216, 1, 262152, 0, 1, 65547, 196608, 1, 65548, 262144, 1, 917515, 0, 1, 851978, 0, 1, 851980, 0, 1, 720906, 65536, 1, 720907, 458752, 0, 720908, 131072, 1, 655372, 458752, 1, 655371, 524288, 0, 655370, 393216, 1, 589834, 65536, 0, 589835, 393216, 0, 589836, 131072, 0, 786440, 196608, 1, 524297, 0, 1, 786441, 262144, 1, 917509, 65536, 0, 917510, 131072, 0)
 
-[node name="GameBorders" type="StaticBody2D" parent="Map"]
-collision_layer = 4
-collision_mask = 3
-
-[node name="Top" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(186, 48)
-shape = SubResource("RectangleShape2D_03one")
-
-[node name="Left" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(48, 186)
-shape = SubResource("RectangleShape2D_vv1i5")
-
-[node name="Right" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(324, 186)
-shape = SubResource("RectangleShape2D_5ghsk")
-
-[node name="Bottom" type="CollisionShape2D" parent="Map/GameBorders"]
-position = Vector2(186, 324)
-shape = SubResource("RectangleShape2D_npk40")
+[node name="GameBorders" parent="Map" instance=ExtResource("7_6j2g7")]
 
 [node name="ExitArea" parent="Map" instance=ExtResource("4_kmbkx")]
 position = Vector2(258, 294)
