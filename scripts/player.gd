@@ -4,6 +4,7 @@ class_name Player
 
 @export var speed: float = 1.5
 @export var push_force: float = 15000
+@onready var animation: AnimatedSprite2D = $Sprite2D
 var warp_speed: float = 1
 
 func _ready() -> void:
@@ -28,7 +29,7 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_released("warp_speed"):
 		warp_speed = 1
 	if Input.is_action_pressed("reset"):
-		_reset()
+		_reset(0.3)
 		
 	var collision: KinematicCollision2D = move_and_collide(velocity)
 	
@@ -42,10 +43,17 @@ func print_player_position() -> void:
 	print("x=", int(position.x), " | y=", int(position.y))
 
 func _on_laser_beam_player_touch() -> void:
-	_reset()
+	_die_animation()
+	_reset(0.7)
 
-func _reset():
+func _reset(time_to_reset: float) -> void:
+	await get_tree().create_timer(time_to_reset).timeout
 	get_tree().reload_current_scene()
+
+func _die_animation() -> void:
+	animation.z_index = -1
+	animation.play("die")
+
 
 
 
