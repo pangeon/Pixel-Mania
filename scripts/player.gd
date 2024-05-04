@@ -4,10 +4,18 @@ class_name Player
 
 @export var speed: float = 1.5
 @export var push_force: float = 15000
+@export var laser_sound_path = "res://assets/music/hit_laser_sound.wav"
+
 @onready var animation: AnimatedSprite2D = $Sprite2D
+@onready var hit_laser_sound: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+
 var warp_speed: float = 1
 
 func _ready() -> void:
+	hit_laser_sound.name = "HitLaserSound"
+	hit_laser_sound.set_stream(load(laser_sound_path))
+	$".".add_child(hit_laser_sound)
+	
 	position = Globals.PLAYER_START # (51, 303)
 	var laser_beams: Array[Node] = get_tree().get_nodes_in_group("laser_beams")
 	
@@ -44,7 +52,8 @@ func print_player_position() -> void:
 
 func _on_laser_beam_player_touch() -> void:
 	_die_animation()
-	_reset(0.7)
+	_play_hit_laser_sound()
+	_reset(0.5)
 
 func _reset(time_to_reset: float) -> void:
 	await get_tree().create_timer(time_to_reset).timeout
@@ -54,6 +63,8 @@ func _die_animation() -> void:
 	animation.z_index = -1
 	animation.play("die")
 
+func _play_hit_laser_sound() -> void:
+	hit_laser_sound.play()
 
 
 
