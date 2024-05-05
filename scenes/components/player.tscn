@@ -59,9 +59,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_bj1ku")
 }],
-"loop": false,
+"loop": true,
 "name": &"promote",
-"speed": 10.0
+"speed": 30.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51lt4"]

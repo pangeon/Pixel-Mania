@@ -2,6 +2,13 @@ extends Node2D
 
 class_name Component
 
+static func get_sound_loader(sound_path: String, sound_player_name: String) -> AudioStreamPlayer2D:
+	var sound: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+	sound.name = sound_player_name
+	sound.set_stream(load(sound_path))
+	
+	return sound
+
 func get_component(scene_path: String, scene_name: String, order: int) -> Node2D:
 	var scene_instance: Node2D = load(scene_path).instantiate()
 	scene_instance.name = scene_name
