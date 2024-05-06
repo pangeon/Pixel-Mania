@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://24d67nqa5bx3"]
+
+[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_6op57"]
+[ext_resource type="Texture2D" uid="uid://e57c86jboa8d" path="res://assets/img/start_screen.png" id="1_jt0jy"]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_6op57")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 372.0
+offset_bottom = 372.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jt0jy")
+
+[node name="AccessLevelButton1" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 60.0
+offset_top = 240.0
+offset_right = 102.0
+offset_bottom = 282.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton2" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 114.0
+offset_top = 240.0
+offset_right = 156.0
+offset_bottom = 282.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton3" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 168.0
+offset_top = 240.0
+offset_right = 210.0
+offset_bottom = 282.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton4" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 222.0
+offset_top = 240.0
+offset_right = 264.0
+offset_bottom = 282.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton5" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 276.0
+offset_top = 240.0
+offset_right = 318.0
+offset_bottom = 282.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton6" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 60.0
+offset_top = 294.0
+offset_right = 102.0
+offset_bottom = 336.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton7" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 114.0
+offset_top = 294.0
+offset_right = 156.0
+offset_bottom = 336.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton8" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 168.0
+offset_top = 294.0
+offset_right = 210.0
+offset_bottom = 336.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton9" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 222.0
+offset_top = 294.0
+offset_right = 264.0
+offset_bottom = 336.0
+ignore_texture_size = true
+
+[node name="AccessLevelButton10" type="TextureButton" parent="." groups=["access_level_buttons"]]
+offset_left = 276.0
+offset_top = 294.0
+offset_right = 318.0
+offset_bottom = 336.0
+ignore_texture_size = true
