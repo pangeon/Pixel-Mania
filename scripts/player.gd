@@ -61,11 +61,11 @@ func _play_hit_laser_sound() -> void:
 func input() -> void:
 	if Input.is_action_pressed("move_right"):
 		velocity.x += speed*warp_speed
-	if Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left"):
 		velocity.x -= speed*warp_speed
-	if Input.is_action_pressed("move_down"):
+	elif Input.is_action_pressed("move_down"):
 		velocity.y += speed*warp_speed
-	if Input.is_action_pressed("move_up"):
+	elif Input.is_action_pressed("move_up"):
 		velocity.y -= speed*warp_speed
 	if Input.is_action_pressed("warp_speed"):
 		warp_speed = 2

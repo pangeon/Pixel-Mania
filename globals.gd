@@ -35,5 +35,6 @@ const LEVEL_1: String = "res://scenes/levels/start_level.tscn"
 const LEVEL_2: String = "res://scenes/levels/level_2.tscn"
 const LEVEL_3: String = "res://scenes/levels/level_3.tscn"
 const LEVEL_4: String = "res://scenes/levels/level_4.tscn"
+const LEVEL_5: String = "res://scenes/levels/level_5.tscn"
 
 
