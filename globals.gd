@@ -31,4 +31,9 @@ const GAME_AREA_Y: float = CANVAS_WIDTH - (GAME_AREA_X+PLAYER_SIZE) # 372-(48+18
 const PLAYER_AREA: float = CANVAS_HEIGHT - 2*(CANVAS_PADDING+LINE_WIDTH) # 372-2*(42+8) = 372-96 = 276
 const PLAYER_START: Vector2 = Vector2(GAME_AREA_X + LINE_WIDTH/2, GAME_AREA_Y - LINE_WIDTH/3) # (48+3, 306-3)=(51, 303)
 
+const LEVEL_1: String = "res://scenes/levels/start_level.tscn"
+const LEVEL_2: String = "res://scenes/levels/level_2.tscn"
+const LEVEL_3: String = "res://scenes/levels/level_3.tscn"
+const LEVEL_4: String = "res://scenes/levels/level_4.tscn"
+
 

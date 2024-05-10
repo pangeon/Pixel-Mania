@@ -31,6 +31,7 @@
 
     #### Playlist:
     ---
+    0. [Sześć Walców nr 1 – Maria Dolores Knoop – w opracowaniu na gitarę](https://freesound.org/people/GregorQuendel/sounds/729864/?)
     1. [Chopin - Nocturne Op. 27 No. 2](https://freesound.org/people/GregorQuendel/sounds/706660/)
     2. [Granados - Spanish Dance No. 2, Oriental](https://freesound.org/people/GregorQuendel/sounds/710599/)
     3. [Bach - The Well-Tempered Clavier - Book 1 - 1. Prelude C Major - BWV 846](https://freesound.org/people/GregorQuendel/sounds/710142/)
