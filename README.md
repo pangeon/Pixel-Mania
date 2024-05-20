@@ -20,6 +20,10 @@
     - add level 3 and 4 
     - add more music soundtracks
     - change player control speed
+- **0.3 beta**:
+    - add level 5
+    - add sounds: die, promote, push
+    - add start screen with level choice
 
 # Credits
 
@@ -37,3 +41,8 @@
     3. [Bach - The Well-Tempered Clavier - Book 1 - 1. Prelude C Major - BWV 846](https://freesound.org/people/GregorQuendel/sounds/710142/)
     4. [Debussy - Arabesque No. 1](https://freesound.org/people/GregorQuendel/sounds/706299/)
     ---
+
+### Sounds:
+* [qfox123](https://freesound.org/people/qfox123/sounds/462807/) - player touch laser beam
+* [LittleRainySeasons](https://freesound.org/people/LittleRainySeasons/sounds/335908/) - end level sound
+* [stulldude](https://freesound.org/people/stulldude/sounds/574909/) - touch activation plate
