@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://df45yanaipid"]
+[gd_scene load_steps=10 format=3 uid="uid://df45yanaipid"]
 
 [ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="1_7huaw"]
 [ext_resource type="Script" path="res://scripts/level_5.gd" id="1_dxftn"]
 [ext_resource type="PackedScene" uid="uid://c71se0nqoim42" path="res://scenes/components/empty_tile_map.tscn" id="1_hr3o3"]
+[ext_resource type="PackedScene" uid="uid://do23lgyvw7qyk" path="res://scenes/levels/level_6.tscn" id="2_5v82g"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="2_a0nul"]
 [ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="2_ckyyr"]
 [ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="2_sx4yr"]
@@ -11,6 +12,7 @@
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_dxftn")
+next_level = ExtResource("2_5v82g")
 
 [node name="Objects" type="Node2D" parent="."]
 

@@ -21,6 +21,8 @@ func _ready():
 			access_level_buttons[i].pressed.connect(_level_4)
 		elif i == 4:
 			access_level_buttons[i].pressed.connect(_level_5)
+		elif i == 5:
+			access_level_buttons[i].pressed.connect(_level_6)
 		else:
 			pass
 		
@@ -38,6 +40,9 @@ func _level_4() -> void:
 
 func _level_5() -> void:
 	get_tree().change_scene_to_file(Globals.LEVEL_5)
+
+func _level_6() -> void:
+	get_tree().change_scene_to_file(Globals.LEVEL_6)
 
 func _play_music() -> void:
 	var start_music_player: AudioStreamPlayer2D = $".".get_node("StartMusic")

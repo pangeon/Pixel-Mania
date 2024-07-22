@@ -63,6 +63,7 @@ offset_left = 60.0
 offset_top = 294.0
 offset_right = 102.0
 offset_bottom = 336.0
+texture_hover = ExtResource("3_54w8b")
 ignore_texture_size = true
 
 [node name="AccessLevelButton7" type="TextureButton" parent="." groups=["access_level_buttons"]]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://do23lgyvw7qyk"]
+
+[ext_resource type="Script" path="res://scripts/level_6.gd" id="1_eg0s8"]
+[ext_resource type="PackedScene" uid="uid://c71se0nqoim42" path="res://scenes/components/empty_tile_map.tscn" id="2_oa2dh"]
+[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="2_q5r5p"]
+[ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="3_gsd7f"]
+[ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="3_ke5gm"]
+[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="4_eykbo"]
+[ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="4_l2wxg"]
+
+[node name="Level6" type="Node2D"]
+script = ExtResource("1_eg0s8")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="ActivationPlate" parent="Objects" instance=ExtResource("4_eykbo")]
+position = Vector2(309, 96)
+
+[node name="ActivationPlate2" parent="Objects" instance=ExtResource("4_eykbo")]
+position = Vector2(309, 60)
+
+[node name="ActivationPlate3" parent="Objects" instance=ExtResource("4_eykbo")]
+position = Vector2(81, 168)
+
+[node name="LaserBeam" parent="Objects" instance=ExtResource("3_ke5gm")]
+position = Vector2(258, 195)
+
+[node name="LaserBeam2" parent="Objects" instance=ExtResource("3_ke5gm")]
+position = Vector2(258, 141)
+rotation = -3.14159
+
+[node name="LaserBeam3" parent="Objects" instance=ExtResource("3_ke5gm")]
+position = Vector2(146, 96)
+scale = Vector2(1, 0.5)
+
+[node name="Chest" parent="Objects" instance=ExtResource("2_q5r5p")]
+position = Vector2(158, 159)
+
+[node name="Chest2" parent="Objects" instance=ExtResource("2_q5r5p")]
+position = Vector2(182, 159)
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Map" instance=ExtResource("2_oa2dh")]
+layer_0/tile_data = PackedInt32Array(458765, 196608, 1, 327693, 196608, 1, 458766, 327680, 1, 327694, 327680, 1, 393227, 0, 1, 589838, 327680, 1, 589837, 327680, 1, 589836, 327680, 1, 589835, 327680, 1, 589834, 196608, 1, 196622, 327680, 1, 196621, 327680, 1, 196620, 327680, 1, 196619, 327680, 1, 196618, 196608, 1, 524297, 262144, 0, 458761, 196608, 0, 262153, 196608, 0, 327689, 262144, 0, 720897, 65536, 0, 720898, 131072, 0, 786433, 65536, 1, 786434, 131072, 1, 589828, 131072, 1, 589827, 65536, 1, 524291, 65536, 0, 524292, 131072, 0, 720900, 196608, 0, 786436, 327680, 0, 851972, 327680, 0, 917508, 327680, 0, 524294, 327680, 0, 589830, 327680, 0, 655366, 327680, 0, 720902, 327680, 0, 786438, 327680, 0, 851974, 327680, 0, 917510, 327680, 0, 458758, 196608, 0, 327681, 196608, 1, 327682, 327680, 1, 327683, 327680, 1, 327684, 327680, 1, 327685, 327680, 1, 327686, 262144, 1, 524289, 0, 1, 720906, 0, 1, 720908, 0, 1, 851978, 0, 1, 851980, 0, 1, 65546, 262144, 1, 65548, 0, 1, 65537, 196608, 1, 65538, 327680, 1, 65539, 327680, 1, 65540, 327680, 1, 65541, 327680, 1, 65542, 262144, 1, 196609, 196608, 1, 196610, 327680, 1, 196611, 327680, 1, 196612, 327680, 1, 196613, 327680, 1, 196614, 262144, 1, 65545, 196608, 1)
+
+[node name="GameBorders" parent="Map" instance=ExtResource("3_gsd7f")]
+
+[node name="ExitArea" parent="Map" instance=ExtResource("4_l2wxg")]
+position = Vector2(312, 168)
+
+[connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_touch"]
