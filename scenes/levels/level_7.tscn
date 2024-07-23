@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://8elts8263hok"]
+
+[ext_resource type="Script" path="res://scripts/level_7.gd" id="1_kw37u"]
+[ext_resource type="PackedScene" uid="uid://c71se0nqoim42" path="res://scenes/components/empty_tile_map.tscn" id="2_40wbn"]
+[ext_resource type="PackedScene" uid="uid://7vjnf1tloo4f" path="res://scenes/levels/level_8.tscn" id="2_355c2"]
+[ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="3_38bf0"]
+[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="3_n124y"]
+[ext_resource type="Texture2D" uid="uid://dxawhf3uuph3r" path="res://assets/img/dark_gravity_chest_16-24px.png" id="4_1p3fq"]
+[ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="4_qt51o"]
+[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="5_ml7yl"]
+[ext_resource type="Texture2D" uid="uid://bfke3di2b1yck" path="res://assets/img/ice_chest_16-24px.png" id="6_ldcqe"]
+[ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="7_fpv07"]
+
+[node name="Level7" type="Node2D"]
+script = ExtResource("1_kw37u")
+next_level = ExtResource("2_355c2")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="ActivationPlate" parent="Objects" instance=ExtResource("5_ml7yl")]
+position = Vector2(147, 222)
+
+[node name="ActivationPlate2" parent="Objects" instance=ExtResource("5_ml7yl")]
+position = Vector2(63, 186)
+
+[node name="ActivationPlate3" parent="Objects" instance=ExtResource("5_ml7yl")]
+position = Vector2(207, 96)
+
+[node name="Chest" parent="Objects" instance=ExtResource("3_n124y")]
+position = Vector2(71, 51)
+chest_texture = ExtResource("4_1p3fq")
+
+[node name="Chest2" parent="Objects" instance=ExtResource("3_n124y")]
+position = Vector2(125, 267)
+
+[node name="Chest3" parent="Objects" instance=ExtResource("3_n124y")]
+position = Vector2(296, 263)
+rotation = 1.5708
+max_speed = 30.0
+chest_texture = ExtResource("6_ldcqe")
+
+[node name="LaserBeam" parent="Objects" instance=ExtResource("7_fpv07")]
+position = Vector2(268, 195)
+
+[node name="LaserBeam2" parent="Objects" instance=ExtResource("7_fpv07")]
+position = Vector2(268, 285)
+scale = Vector2(1, 2)
+
+[node name="LaserBeam3" parent="Objects" instance=ExtResource("7_fpv07")]
+position = Vector2(222, 142)
+rotation = 1.5708
+scale = Vector2(1, 1.5)
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Map" instance=ExtResource("2_40wbn")]
+layer_0/tile_data = PackedInt32Array(917511, 327680, 0, 7, 327680, 0, 65543, 327680, 0, 131079, 327680, 0, 196615, 327680, 0, 262151, 327680, 0, 327687, 262144, 0, 851975, 327680, 0, 786439, 327680, 0, 720903, 327680, 0, 655367, 327680, 0, 589831, 196608, 0, 458759, 0, 1, 458757, 0, 1, 327681, 65536, 0, 327682, 131072, 0, 393217, 65536, 1, 393218, 131072, 1, 458755, 0, 1, 655365, 131072, 0, 655364, 65536, 0, 720900, 65536, 1, 720901, 131072, 1, 589833, 0, 1, 13, 262144, 0, 131086, 327680, 1, 131085, 196608, 1, 262155, 65536, 0, 327691, 393216, 1, 327692, 524288, 0, 262156, 393216, 0, 262157, 393216, 0, 327693, 524288, 0, 262158, 393216, 0, 327694, 524288, 0, 393227, 65536, 1, 393228, 458752, 0, 393229, 458752, 0, 393230, 458752, 0, 589836, 131072, 0, 655372, 131072, 1, 655371, 65536, 1, 589835, 65536, 0)
+
+[node name="GameBorders" parent="Map" instance=ExtResource("3_38bf0")]
+
+[node name="ExitArea" parent="Map" instance=ExtResource("4_qt51o")]
+position = Vector2(312, 60)
+rotation = 4.71239
+
+[connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]

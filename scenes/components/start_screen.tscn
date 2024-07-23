@@ -71,6 +71,7 @@ offset_left = 114.0
 offset_top = 294.0
 offset_right = 156.0
 offset_bottom = 336.0
+texture_hover = ExtResource("3_54w8b")
 ignore_texture_size = true
 
 [node name="AccessLevelButton8" type="TextureButton" parent="." groups=["access_level_buttons"]]
@@ -78,6 +79,7 @@ offset_left = 168.0
 offset_top = 294.0
 offset_right = 210.0
 offset_bottom = 336.0
+texture_hover = ExtResource("3_54w8b")
 ignore_texture_size = true
 
 [node name="AccessLevelButton9" type="TextureButton" parent="." groups=["access_level_buttons"]]
@@ -85,6 +87,7 @@ offset_left = 222.0
 offset_top = 294.0
 offset_right = 264.0
 offset_bottom = 336.0
+texture_hover = ExtResource("3_54w8b")
 ignore_texture_size = true
 
 [node name="AccessLevelButton10" type="TextureButton" parent="." groups=["access_level_buttons"]]
@@ -92,4 +95,5 @@ offset_left = 276.0
 offset_top = 294.0
 offset_right = 318.0
 offset_bottom = 336.0
+texture_hover = ExtResource("3_54w8b")
 ignore_texture_size = true

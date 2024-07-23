@@ -16,3 +16,12 @@ func _physics_process(_delta: float) -> void:
 	var current_velocity: float = linear_velocity.length()
 	if current_velocity > max_speed:
 		linear_velocity = linear_velocity.normalized() * max_speed
+
+func on_gravity(direction: int = 0) -> void:
+	if direction == 0:
+		set_gravity_scale(10.0)
+	elif direction == 1:
+		set_gravity_scale(-10.0)
+	else:
+		pass
+	

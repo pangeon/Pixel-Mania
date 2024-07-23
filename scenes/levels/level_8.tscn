@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://7vjnf1tloo4f"]
+
+[ext_resource type="Script" path="res://scripts/level_8.gd" id="1_37dan"]
+[ext_resource type="PackedScene" uid="uid://c71se0nqoim42" path="res://scenes/components/empty_tile_map.tscn" id="1_xaoj4"]
+[ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="2_be17b"]
+[ext_resource type="PackedScene" uid="uid://deea1f3uvgi32" path="res://scenes/levels/level_9.tscn" id="2_ovb8h"]
+[ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="3_0t557"]
+
+[node name="Level8" type="Node2D"]
+script = ExtResource("1_37dan")
+next_level = ExtResource("2_ovb8h")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Map" instance=ExtResource("1_xaoj4")]
+
+[node name="GameBorders" parent="Map" instance=ExtResource("2_be17b")]
+
+[node name="ExitArea" parent="Map" instance=ExtResource("3_0t557")]
+position = Vector2(312, 60)
