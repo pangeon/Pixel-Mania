@@ -64,3 +64,7 @@ rotation = 4.71239
 
 [connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
 [connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_touch"]

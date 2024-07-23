@@ -3,6 +3,7 @@ extends Game
 class_name Level7
 
 @onready var gravity_chest: Chest = $Objects/Chest
+@onready var laser_beams: Array[Node] = get_tree().get_nodes_in_group("laser_beams")
 var gravity_direction: int = 0
 
 func _init() -> void:
@@ -27,4 +28,16 @@ func _on_activation_plate_chest_touch():
 	gravity_direction = 1
 
 func _on_activation_plate_chest_outside():
-	pass # Replace with function body.
+	pass
+
+func _on_activation_plate_2_chest_touch():
+	laser_beams[1].off()
+
+func _on_activation_plate_2_chest_outside():
+	laser_beams[1].on()
+
+func _on_activation_plate_3_chest_touch():
+	laser_beams[2].off()
+
+func _on_activation_plate_3_chest_outside():
+	laser_beams[2].on()
