@@ -2,8 +2,9 @@ extends Game
 
 class_name Level7
 
-@onready var gravity_chest: Chest = $Objects/Chest
+@onready var chests: Array[Node] = get_tree().get_nodes_in_group("chests")
 @onready var laser_beams: Array[Node] = get_tree().get_nodes_in_group("laser_beams")
+
 var gravity_direction: int = 0
 
 func _init() -> void:
@@ -21,18 +22,20 @@ func _init() -> void:
 		$".".add_child(component)
 
 func _process(_delta) -> void:
-	gravity_chest.on_gravity(gravity_direction)
-
+	chests[0].on_gravity(gravity_direction)
 
 func _on_activation_plate_chest_touch():
-	gravity_direction = 1
+	if gravity_direction == 0:
+		gravity_direction = 1
+	elif gravity_direction == 1:
+		gravity_direction = 0
 
 func _on_activation_plate_chest_outside():
 	pass
 
 func _on_activation_plate_2_chest_touch():
 	laser_beams[1].off()
-
+	
 func _on_activation_plate_2_chest_outside():
 	laser_beams[1].on()
 

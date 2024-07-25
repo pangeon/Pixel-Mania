@@ -1,11 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://jqcaoee85fv4"]
+[gd_scene load_steps=8 format=3 uid="uid://jqcaoee85fv4"]
 
 [ext_resource type="Texture2D" uid="uid://d3ya7n01pr2lb" path="res://assets/img/activation_plate_16-24px_off.png" id="1_adgfe"]
 [ext_resource type="Script" path="res://scripts/activation_plate.gd" id="1_t6dfo"]
 [ext_resource type="Texture2D" uid="uid://l4nbs13w1d4f" path="res://assets/img/activation_plate_16-24px_on.png" id="2_b1ftl"]
+[ext_resource type="Texture2D" uid="uid://b8ayx8d5yrcjm" path="res://assets/img/gravity_switcher_16-24px_down.png" id="2_dmjqn"]
+[ext_resource type="Texture2D" uid="uid://c0oeqqcycv3i0" path="res://assets/img/gravity_switcher_16-24px_up.png" id="3_txymm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mpoj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dmjqn")
+}],
+"loop": true,
+"name": &"gravity_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_txymm")
+}],
+"loop": true,
+"name": &"gravity_up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_adgfe")
@@ -34,7 +52,8 @@ script = ExtResource("1_t6dfo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8mpoj")
-animation = &"off"
+animation = &"gravity_up"
+autoplay = "off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
