@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://7vjnf1tloo4f"]
+[gd_scene load_steps=11 format=3 uid="uid://7vjnf1tloo4f"]
 
 [ext_resource type="Script" path="res://scripts/level_8.gd" id="1_37dan"]
 [ext_resource type="PackedScene" uid="uid://c71se0nqoim42" path="res://scenes/components/empty_tile_map.tscn" id="1_xaoj4"]
 [ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="2_be17b"]
 [ext_resource type="PackedScene" uid="uid://deea1f3uvgi32" path="res://scenes/levels/level_9.tscn" id="2_ovb8h"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="3_0t557"]
+[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="3_by3j1"]
+[ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="3_oju6u"]
+[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="4_xf102"]
+[ext_resource type="Texture2D" uid="uid://bfke3di2b1yck" path="res://assets/img/ice_chest_16-24px.png" id="5_ut05e"]
+[ext_resource type="Texture2D" uid="uid://dxawhf3uuph3r" path="res://assets/img/dark_gravity_chest_16-24px.png" id="7_ort2h"]
 
 [node name="Level8" type="Node2D"]
 script = ExtResource("1_37dan")
@@ -12,11 +17,58 @@ next_level = ExtResource("2_ovb8h")
 
 [node name="Objects" type="Node2D" parent="."]
 
+[node name="ActivationPlate" parent="Objects" instance=ExtResource("3_by3j1")]
+position = Vector2(309, 114)
+
+[node name="ActivationPlate2" parent="Objects" instance=ExtResource("3_by3j1")]
+position = Vector2(63, 168)
+
+[node name="Chest" parent="Objects" instance=ExtResource("4_xf102")]
+position = Vector2(88, 273)
+max_speed = 30.0
+chest_texture = ExtResource("5_ut05e")
+
+[node name="Chest2" parent="Objects" instance=ExtResource("4_xf102")]
+position = Vector2(268, 69)
+chest_texture = ExtResource("7_ort2h")
+
+[node name="Chest3" parent="Objects" instance=ExtResource("4_xf102")]
+position = Vector2(160, 115)
+rotation = 1.5708
+
+[node name="Chest4" parent="Objects" instance=ExtResource("4_xf102")]
+position = Vector2(121, 131)
+rotation = 1.5708
+
+[node name="LaserBeam" parent="Objects" instance=ExtResource("3_oju6u")]
+position = Vector2(168, 213)
+scale = Vector2(1, 2)
+
+[node name="LaserBeam2" parent="Objects" instance=ExtResource("3_oju6u")]
+position = Vector2(204, 213)
+scale = Vector2(1, 2)
+
+[node name="LaserBeam3" parent="Objects" instance=ExtResource("3_oju6u")]
+position = Vector2(186, 141)
+rotation = -3.14159
+
+[node name="LaserBeam4" parent="Objects" instance=ExtResource("3_oju6u")]
+position = Vector2(285, 186)
+rotation = 1.5708
+scale = Vector2(1, 2)
+
 [node name="Map" type="Node2D" parent="."]
 
 [node name="TileMap" parent="Map" instance=ExtResource("1_xaoj4")]
+layer_0/tile_data = PackedInt32Array(393223, 327680, 1, 393222, 327680, 1, 393224, 327680, 1, 393225, 262144, 1, 524293, 196608, 0, 524297, 196608, 0, 589829, 262144, 0, 589833, 262144, 0, 458762, 0, 1, 458759, 524288, 1, 720901, 65536, 0, 720902, 393216, 0, 720903, 393216, 0, 720904, 393216, 0, 720905, 131072, 0, 786437, 393216, 1, 786438, 524288, 0, 786439, 524288, 0, 786440, 524288, 0, 786441, 458752, 1, 851973, 65536, 1, 851974, 458752, 0, 851975, 458752, 0, 851976, 458752, 0, 851977, 131072, 1, 589825, 196608, 1, 589826, 327680, 1, 196615, 262144, 0, 7, 327680, 0, 65543, 327680, 0, 131079, 327680, 0, 131084, 196608, 1, 131085, 327680, 1, 131086, 327680, 1, 262154, 0, 1, 65537, 65536, 0, 65538, 131072, 0, 131074, 131072, 1, 131073, 65536, 1, 65541, 196608, 0, 131077, 262144, 0, 327681, 262144, 1, 327680, 327680, 1, 589827, 262144, 1, 393221, 196608, 1, 458754, 262144, 1, 458753, 327680, 1, 458752, 327680, 1)
 
 [node name="GameBorders" parent="Map" instance=ExtResource("2_be17b")]
 
 [node name="ExitArea" parent="Map" instance=ExtResource("3_0t557")]
-position = Vector2(312, 60)
+position = Vector2(186, 186)
+rotation = 4.71239
+
+[connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_touch"]

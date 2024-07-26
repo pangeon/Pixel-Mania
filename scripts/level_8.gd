@@ -2,6 +2,9 @@ extends Game
 
 class_name Level8
 
+@onready var chests: Array[Node] = get_tree().get_nodes_in_group("chests")
+@onready var laser_beams: Array[Node] = get_tree().get_nodes_in_group("laser_beams")
+
 func _init() -> void:
 	var component_manager: Component = Component.new()
 	
@@ -16,4 +19,21 @@ func _init() -> void:
 		$".".add_child(component)
 
 func _process(_delta) -> void:
-	pass
+	chests[1].on_gravity()
+
+
+func _on_activation_plate_chest_touch():
+	laser_beams[2].off()
+
+func _on_activation_plate_chest_outside():
+	laser_beams[2].on()
+
+func _on_activation_plate_2_chest_touch():
+	laser_beams[0].off()
+	laser_beams[1].off()
+	laser_beams[3].off()
+
+func _on_activation_plate_2_chest_outside():
+	laser_beams[0].on()
+	laser_beams[1].on()
+	laser_beams[3].on()
