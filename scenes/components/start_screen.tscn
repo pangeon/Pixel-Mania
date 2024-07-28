@@ -83,7 +83,6 @@ texture_hover = ExtResource("3_54w8b")
 ignore_texture_size = true
 
 [node name="AccessLevelButton9" type="TextureButton" parent="." groups=["access_level_buttons"]]
-visible = false
 offset_left = 222.0
 offset_top = 294.0
 offset_right = 264.0

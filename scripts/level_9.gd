@@ -2,6 +2,11 @@ extends Game
 
 class_name Level9
 
+@onready var chests: Array[Node] = get_tree().get_nodes_in_group("chests")
+@onready var laser_beams: Array[Node] = get_tree().get_nodes_in_group("laser_beams")
+
+var lock_laser_beam_2: Array[bool] = [false, false]
+
 func _init() -> void:
 	var component_manager: Component = Component.new()
 	
@@ -16,4 +21,34 @@ func _init() -> void:
 		$".".add_child(component)
 
 func _process(_delta) -> void:
-	pass
+	chests[0].on_gravity()
+	chests[1].on_gravity()
+	if lock_laser_beam_2 == [true, true]:
+		laser_beams[1].off()
+
+func _on_activation_plate_chest_touch():
+	laser_beams[0].off()
+
+func _on_activation_plate_chest_outside():
+	laser_beams[0].on()
+
+func _on_activation_plate_2_chest_touch():
+	lock_laser_beam_2[0] = true
+
+func _on_activation_plate_2_chest_outside():
+	lock_laser_beam_2[1] = false
+
+func _on_activation_plate_3_chest_touch():
+	laser_beams[0].on()
+	lock_laser_beam_2[1] = true
+
+func _on_activation_plate_3_chest_outside():
+	laser_beams[0].off()
+	lock_laser_beam_2[1] = false
+
+func _on_activation_plate_4_chest_touch():
+	laser_beams[2].off()
+	
+func _on_activation_plate_4_chest_outside():
+	laser_beams[2].on()
+	
