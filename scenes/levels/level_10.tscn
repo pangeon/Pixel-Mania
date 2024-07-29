@@ -1,20 +1,98 @@
-[gd_scene load_steps=5 format=3 uid="uid://dspopbmv1cr4g"]
+[gd_scene load_steps=9 format=3 uid="uid://dspopbmv1cr4g"]
 
 [ext_resource type="PackedScene" uid="uid://c71se0nqoim42" path="res://scenes/components/empty_tile_map.tscn" id="1_7oq7o"]
 [ext_resource type="Script" path="res://scripts/level_10.gd" id="1_rldbl"]
+[ext_resource type="PackedScene" uid="uid://24d67nqa5bx3" path="res://scenes/components/start_screen.tscn" id="2_8uy7o"]
 [ext_resource type="PackedScene" uid="uid://busjvgjgilmp3" path="res://scenes/components/game_borders.tscn" id="2_eobii"]
+[ext_resource type="PackedScene" uid="uid://bi5deb2iy8e4l" path="res://scenes/components/laser_beam.tscn" id="2_rk4f2"]
 [ext_resource type="PackedScene" uid="uid://c2qevafp5drm4" path="res://scenes/components/exit_area.tscn" id="3_7u17s"]
+[ext_resource type="PackedScene" uid="uid://jqcaoee85fv4" path="res://scenes/components/activation_plate.tscn" id="3_ow10h"]
+[ext_resource type="PackedScene" uid="uid://kg54s01ginlu" path="res://scenes/components/chest.tscn" id="4_b3svx"]
 
 [node name="Level10" type="Node2D"]
 script = ExtResource("1_rldbl")
+next_level = ExtResource("2_8uy7o")
 
 [node name="Objects" type="Node2D" parent="."]
+position = Vector2(3, 2)
+
+[node name="ActivationPlate" parent="Objects" instance=ExtResource("3_ow10h")]
+position = Vector2(291, 310)
+
+[node name="ActivationPlate2" parent="Objects" instance=ExtResource("3_ow10h")]
+position = Vector2(267, 310)
+
+[node name="ActivationPlate3" parent="Objects" instance=ExtResource("3_ow10h")]
+position = Vector2(243, 310)
+
+[node name="ActivationPlate4" parent="Objects" instance=ExtResource("3_ow10h")]
+position = Vector2(219, 310)
+
+[node name="Chest" parent="Objects" instance=ExtResource("4_b3svx")]
+position = Vector2(232, 184)
+
+[node name="Chest2" parent="Objects" instance=ExtResource("4_b3svx")]
+position = Vector2(133, 243)
+
+[node name="Chest3" parent="Objects" instance=ExtResource("4_b3svx")]
+position = Vector2(112, 132)
+
+[node name="Chest4" parent="Objects" instance=ExtResource("4_b3svx")]
+position = Vector2(258, 301)
+
+[node name="LaserBeam" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(222, 195)
+
+[node name="LaserBeam2" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(150, 195)
+rotation = -3.14159
+
+[node name="LaserBeam3" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(186, 221)
+rotation = 1.5708
+scale = Vector2(1, 1.5)
+
+[node name="LaserBeam4" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(186, 168)
+rotation = -1.5708
+scale = Vector2(1, 1.5)
+
+[node name="LaserBeam5" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(219, 292)
+rotation = -3.14159
+scale = Vector2(1, 1.5)
+
+[node name="LaserBeam6" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(243, 292)
+rotation = -3.14159
+scale = Vector2(1, 1.5)
+
+[node name="LaserBeam7" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(270, 292)
+rotation = -3.14159
+scale = Vector2(1, 1.5)
+
+[node name="LaserBeam8" parent="Objects" instance=ExtResource("2_rk4f2")]
+position = Vector2(291, 292)
+rotation = -3.14159
+scale = Vector2(1, 1.5)
 
 [node name="Map" type="Node2D" parent="."]
 
 [node name="TileMap" parent="Map" instance=ExtResource("1_7oq7o")]
+layer_0/tile_data = PackedInt32Array(589829, 0, 1, 393221, 0, 1, 393225, 0, 1, 589833, 0, 1, 917518, 0, 1, 14, 0, 1, 0, 0, 1, 720905, 196608, 1, 720906, 327680, 1, 720907, 327680, 1, 720908, 327680, 1, 720909, 262144, 1, 65545, 65536, 0, 65547, 131072, 0, 131081, 65536, 1, 131083, 131072, 1, 131082, 458752, 0, 65546, 393216, 0, 262150, 262144, 0, 196614, 196608, 0, 458752, 327680, 1, 458753, 327680, 1, 458754, 262144, 1, 589825, 65536, 0, 589826, 131072, 0, 655361, 65536, 1, 655362, 131072, 1, 655367, 0, 1, 327691, 262144, 0, 262155, 196608, 0)
 
 [node name="GameBorders" parent="Map" instance=ExtResource("2_eobii")]
 
 [node name="ExitArea" parent="Map" instance=ExtResource("3_7u17s")]
-position = Vector2(312, 60)
+position = Vector2(186, 193)
+rotation = -1.5708
+
+[connection signal="chest_outside" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate" to="." method="_on_activation_plate_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate2" to="." method="_on_activation_plate_2_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate3" to="." method="_on_activation_plate_3_chest_touch"]
+[connection signal="chest_outside" from="Objects/ActivationPlate4" to="." method="_on_activation_plate_4_chest_outside"]
+[connection signal="chest_touch" from="Objects/ActivationPlate4" to="." method="_on_activation_plate_4_chest_touch"]

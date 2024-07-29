@@ -24,6 +24,9 @@
     - add level 5
     - add sounds: die, promote, push
     - add start screen with level choice
+- **1.0 beta**
+    - add level 6 - 10
+    - add gravity chest mechanics
 
 # Credits
 
