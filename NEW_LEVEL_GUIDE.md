@@ -13,7 +13,7 @@
     - exit_area.tscn
 7) On top-level scene *Level(numer)* attach script:
 
-```
+```gdscript
 extends Game
 
 class_name Level<number>
