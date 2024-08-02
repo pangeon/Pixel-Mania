@@ -5,12 +5,27 @@
     <a href="https://cecherz.itch.io/pixel-mania">Play online</a>
 <p>
 
+# Deployment guide:
+
+## Requirement 
+- Project base on [Godot Engine](https://godotengine.org/).
+- Game not running on mobile devices.
+
+## How create new levels?
+- Project includes components: that allow you to create your own levels using [Godot Engine](https://docs.godotengine.org/en/stable/). More info -> [CLICK](NEW_LEVEL_GUIDE.md)
+
 # Screens:
 <p align="center">
-    <img src="screens/screen_1.png" width="300" title="screen_1">
-    <img src="screens/screen_2.png" width="300" title="screen_2">
-    <img src="screens/screen_3.png" width="300" title="screen_2">
-    <img src="screens/screen_4.png" width="300" title="screen_2">
+    <img src="screens/screen_1.png" width="200" title="screen_1">
+    <img src="screens/screen_2.png" width="200" title="screen_2">
+    <img src="screens/screen_3.png" width="200" title="screen_3">
+    <img src="screens/screen_4.png" width="200" title="screen_4">
+    <img src="screens/screen_5.png" width="200" title="screen_5">
+    <img src="screens/screen_6.png" width="200" title="screen_6">
+    <img src="screens/screen_7.png" width="200" title="screen_7">
+    <img src="screens/screen_8.png" width="200" title="screen_8">
+    <img src="screens/screen_9.png" width="200" title="screen_9">
+    <img src="screens/screen_10.png" width="200" title="screen_10">
 <p>
 
 # Changelog:
